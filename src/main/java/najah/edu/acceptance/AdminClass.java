@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 import java.util.logging.Level;
 
 public class AdminClass {
-	private static final Logger LOGGER = Logger.getLogger(furnitureClass.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(AdminClass.class.getName());
 	public static Boolean showdetail;
 	public static Boolean addflage;
 	public static Boolean getAddflage() {

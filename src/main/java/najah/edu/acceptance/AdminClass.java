@@ -32,6 +32,7 @@ public class AdminClass {
 	}
 	public static void setHOUSEADED(boolean hOUSEADED) {
 		HOUSEADED = hOUSEADED;
+		
 	}
 	
 	public static Boolean getState() {

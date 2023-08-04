@@ -1,17 +1,16 @@
 package najah.edu.acceptance;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-import najah.edu.acceptance.AdminClass;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
+
 public class Main {
-	 private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
-	public static  boolean adminflag=false;
-	public static  boolean userflage=false;
-	public static  boolean Exitflage=false;
-	public static  boolean ownerflage=false;
-	public static boolean isExitflage() {
+	
+	 static final boolean adminflag=false;
+	 static final boolean userflage=false;
+	static boolean Exitflage=false;
+	static final  boolean ownerflage=false;
+	 static final boolean isExitflage() {
 		return Exitflage;
 	}
 	public static void setExitflage(boolean exitflage) {

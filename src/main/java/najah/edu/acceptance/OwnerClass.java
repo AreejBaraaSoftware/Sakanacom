@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class OwnerClass {
-	 private static final Logger LOGGER = Logger.getLogger(Reservation.class.getName());
+	 private static final Logger LOGGER = Logger.getLogger(OwnerClass.class.getName());
 	public static Boolean owneraddhouse ;
 	public static Boolean flagepicture;
 	

@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 
 public class furnitureClass {
 	 private static final Logger LOGGER = Logger.getLogger(furnitureClass.class.getName());
+	
 	    private String type;
 	    private String material;
 	    private double price;
@@ -59,7 +60,7 @@ public class furnitureClass {
 	        	 LOGGER.log(Level.INFO,"Furniture Type: " +f.getType());
 	        	 LOGGER.log(Level.INFO,"Material: " + f.getMaterial());
 	        	 LOGGER.log(Level.INFO,"Price:$" + f.getPrice());
-	        	 LOGGER.log(Level.INFO,"---------------------------------");
+	        	 LOGGER.log(Level.INFO,"-----------------------------------------");
 	    }
 	    }
 	    public static ArrayList<furnitureClass> furnit=new ArrayList<furnitureClass>();

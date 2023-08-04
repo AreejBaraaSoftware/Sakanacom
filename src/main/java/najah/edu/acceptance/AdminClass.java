@@ -7,8 +7,9 @@ import java.util.logging.Level;
 
 public class AdminClass {
 	private static final Logger LOGGER = Logger.getLogger(AdminClass.class.getName());
+	private static final String dash = " -------------------------------------------------";
 	public static Boolean showdetail;
-	public static Boolean addflage;
+	 static Boolean addflage;
 	public static Boolean getAddflage() {
 		return addflage;
 	}
@@ -102,7 +103,7 @@ public class AdminClass {
                 if (reservations.isEmpty()) {
                 	 LOGGER.log(Level.INFO,"No reservations found for the housing advertisement.");
                 } else {
-                	 LOGGER.log(Level.INFO,"Reservations for the housing advertisement: " + advertisement.getTitle());
+                	    LOGGER.log(Level.INFO,"Reservations for the housing advertisement: " + advertisement.getTitle());
                     for (Reservation reservation : reservations) {
                     	 LOGGER.log(Level.INFO,"Tenant: " + reservation.getTenantName());
                     	 LOGGER.log(Level.INFO,"Contact Information: " + reservation.getContactInformation());
@@ -145,7 +146,7 @@ public class AdminClass {
         LOGGER.log(Level.INFO," ");
 
         if (addUnitOption==true) {
-        	 LOGGER.log(Level.INFO,"------------------------------------------------------ ");
+        	 LOGGER.log(Level.INFO,dash);
            
         	 LOGGER.log(Level.INFO,"Enter the title of the existing housing advertisement: ");
             String existingTitle =scanner.next();
@@ -232,7 +233,7 @@ public class AdminClass {
         	 LOGGER.log(Level.INFO,"Location: " + advertisement.getLocation());
         	 LOGGER.log(Level.INFO,"Owner: " + advertisement.getOwner().getName());
         	 LOGGER.log(Level.INFO,"Contact Information: " + advertisement.getOwner().getContactInformation());
-        	 LOGGER.log(Level.INFO,"------------------------");
+        	 LOGGER.log(Level.INFO,dash);
            
         }
        showdetail=true;
@@ -249,7 +250,7 @@ public class AdminClass {
     	   LOGGER.log(Level.INFO,"Location: " + advertisement.getLocation());
     	   LOGGER.log(Level.INFO,"Owner: " + advertisement.getOwner().getName());
     	   LOGGER.log(Level.INFO,"Contact Information: " + advertisement.getOwner().getContactInformation());
-    	   LOGGER.log(Level.INFO,"------------------------");
+    	   LOGGER.log(Level.INFO,dash);
               
            }
           showdetail=true;
@@ -337,7 +338,7 @@ public class AdminClass {
             	 LOGGER.log(Level.INFO,"Location: " + advertisement.getLocation());
             	 LOGGER.log(Level.INFO,"Owner: " + advertisement.getOwner().getName());
             	 LOGGER.log(Level.INFO,"Contact Information: " + advertisement.getOwner().getContactInformation());
-            	 LOGGER.log(Level.INFO,"------------------------");
+            	 LOGGER.log(Level.INFO,dash);
                 found = true;
             }
            showdetail=true;

@@ -1,9 +1,14 @@
 package najah.edu.acceptance;
 
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class Units {
+	 private static final Logger LOGGER = Logger.getLogger(Units.class.getName());
  public static Boolean 	availableflage;
  public static Boolean monthlyflage;
  public static String photounit;
@@ -168,13 +173,13 @@ public static void setMonthlyflage(Boolean monthlyflage) {
 
         for (Units Unitlist : unit ) {
            
-                System.out.println("unitnumber: " + Unitlist.getUnitNumber());
-                System.out.println("bathrooms: " + Unitlist.getBathrooms());
-                System.out.println("bedroom: " + Unitlist.getBedrooms());
-                System.out.println("monthly: " + Unitlist.isMonthlyRent());
-                System.out.println("price: " + Unitlist.getPrice());
-               // System.out.println("Reservation: " + Unitlist.getReservations());
-                System.out.println("------------------------");
+        	LOGGER.log(Level.INFO,"unitnumber: " + Unitlist.getUnitNumber());
+        	LOGGER.log(Level.INFO,"bathrooms: " + Unitlist.getBathrooms());
+        	LOGGER.log(Level.INFO,"bedroom: " + Unitlist.getBedrooms());
+        	LOGGER.log(Level.INFO,"monthly: " + Unitlist.isMonthlyRent());
+        	LOGGER.log(Level.INFO,"price: " + Unitlist.getPrice());
+             
+            	LOGGER.log(Level.INFO,  "------------------------");
                 found = true;
             
         
@@ -186,13 +191,14 @@ public static void setMonthlyflage(Boolean monthlyflage) {
         boolean found = false;
 
         for (Units Unitlist : unit ) {
-           
-                System.out.println("unitnumber: " + Unitlist.getUnitNumber());
-                System.out.println("photo: " + Unitlist.getPhotounit());
+        	LOGGER.log(Level.INFO, "unitnumber:"+Unitlist.getUnitNumber());
+        
+        	LOGGER.log(Level.INFO, "photo:"+Unitlist.getPhotounit());
+            
                 
                
-               // System.out.println("Reservation: " + Unitlist.getReservations());
-                System.out.println("------------------------");
+              
+        	LOGGER.log(Level.INFO,  "------------------------");
                 found = true;
             
         
@@ -203,13 +209,13 @@ public static void setMonthlyflage(Boolean monthlyflage) {
    public static void availableornot() {
 	   for (Units Unitlist : unit ) {
 		   if(Unitlist.isAvailable()==true) {
-			   System.out.println(Unitlist.getUnitNumber());
-			   System.out.println(" yes available");
+			   LOGGER.log(Level.INFO,Unitlist.getUnitNumber());
+			   LOGGER.log(Level.INFO," yes available");
 			   availableflage=true;
 		   }
 		   else {
-			   System.out.println(Unitlist.getUnitNumber());
-			   System.out.println(" Not available"); 
+			   LOGGER.log(Level.INFO,Unitlist.getUnitNumber());
+			   LOGGER.log(Level.INFO," Not available"); 
 		   }
 	   }
 	   
@@ -218,13 +224,13 @@ public static void setMonthlyflage(Boolean monthlyflage) {
    public static void informationaboutmonthlyrent() {
 	   for (Units Unitlist : unit ) {
 		   if(Unitlist.isMonthlyRent()==true) {
-			   System.out.println(Unitlist.getUnitNumber());
-			   System.out.println("yes inclusive of electricity and water  ");
+			   LOGGER.log(Level.INFO,Unitlist.getUnitNumber());
+			   LOGGER.log(Level.INFO,"yes inclusive of electricity and water  ");
 			  monthlyflage=true;
 		   }
 		   else {
-			   System.out.println(Unitlist.getUnitNumber());
-			   System.out.println("no inclusive of electricity and water "); 
+			   LOGGER.log(Level.INFO,Unitlist.getUnitNumber());
+			   LOGGER.log(Level.INFO,"no inclusive of electricity and water "); 
 		   }
 	   }
    }
@@ -242,21 +248,20 @@ public static void setMonthlyflage(Boolean monthlyflage) {
    
    
 	
-	// public static Units u=new Units();
+	
    public static void addphoto() {
 	   Units unit1 = new Units("101","");
        Units unit2 = new Units("102","");
-     //  unit1.setApproved1(true);
-      // unit2.setApproved1(true);
+    
        unit.add(unit1);
        unit.add(unit2);
 	  
 		   Scanner scanner = new Scanner(System.in);
-	        System.out.print("Enter the unit number: ");
+		   LOGGER.log(Level.INFO,"Enter the unit number: ");
 	        String unitNumber = scanner.nextLine();
 	        for ( int i=0;i<unit.size();i++) {
 		   if(unit.get(i).getUnitNumber().equals(unitNumber)) {
-			   System.out.print("Enter the photo: ");
+			   LOGGER.log(Level.INFO,"Enter the photo: ");
 		        String photo = scanner.nextLine();
 		        unit.get(i).setPhotounit(photo);
 		        flagepicture=true;
@@ -275,8 +280,8 @@ public static void setMonthlyflage(Boolean monthlyflage) {
 
 	        for (Units Unitlist : unit) {
 	            
-	                System.out.println("numberunit: " + Unitlist.getUnitNumber());
-	               	 System.out.println("photo: " + Unitlist.getPhotounit());
+	        	LOGGER.log(Level.INFO,"numberunit: " + Unitlist.getUnitNumber());
+	        	LOGGER.log(Level.INFO,"photo: " + Unitlist.getPhotounit());
 	               
 	                found = true;
 	           
@@ -284,7 +289,7 @@ public static void setMonthlyflage(Boolean monthlyflage) {
 	        }
 
 	        if (!found) {
-	            System.out.println("Not found  Unit " );
+	        	LOGGER.log(Level.INFO,"Not found  Unit " );
 	        }
 	}
 	

@@ -3,9 +3,12 @@ package najah.edu.acceptance;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+import java.util.logging.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TenantClass {
+	 private static final Logger LOGGER = Logger.getLogger(TenantClass.class.getName());
 	private final static List <TenantClass> Tenant= new ArrayList<TenantClass>();
 	
   public static String name;
@@ -47,9 +50,9 @@ private static  Units n1=new Units();
 public static  void payprice () {
 		n1.viewunit();
 	 Scanner scanner = new Scanner(System.in);
-	 System.out.print("Enter number unit to reseve : ");
+	 LOGGER.log(Level.INFO,"Enter number unit to reseve : ");
     String number = scanner.nextLine();
-    System.out.print("Enterinformation phone number or any thing to connect  : ");
+    LOGGER.log(Level.INFO,"Enter information phone number or any thing to connect  : ");
     String phone = scanner.nextLine();
     
   

@@ -3,7 +3,10 @@ package najah.edu.acceptance;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class Reservation {
+	 private static final Logger LOGGER = Logger.getLogger(Reservation.class.getName());
 	public static ArrayList<Reservation> Reservelist;
 	 public  String tenantName;
 	 public  int pay;
@@ -105,40 +108,39 @@ public static void setApproved(boolean approved) {
     public static void Reversehome() {
     	n.viewunit();
     	 Scanner scanner = new Scanner(System.in);
-    	 System.out.print("Enter number unit to reseve : ");
+    	 LOGGER.log(Level.INFO,"Enter number unit to reseve : ");
          String number = scanner.nextLine();
-         System.out.print("Enter name : ");
+         LOGGER.log(Level.INFO,"Enter name : ");
          String name = scanner.nextLine();
-         System.out.print("Enter checkInDate : ");
+         LOGGER.log(Level.INFO,"Enter checkInDate : ");
          String Datein = scanner.nextLine();
-         System.out.print("Enter checkOutDate : ");
+         LOGGER.log(Level.INFO,"Enter checkOutDate : ");
          String Dateout = scanner.nextLine();
-         System.out.print("Enter information phone number or any thing to connect  : ");
+         LOGGER.log(Level.INFO,"Enter information phone number or any thing to connect  : ");
          String phone = scanner.nextLine();
-         System.out.print("pay the rent : ");
+         LOGGER.log(Level.INFO,"pay the rent : ");
         int pay = scanner.nextInt();
-       //  for (Units Unitlist : unit ) {
-  		  // if(Unitlist.getUnitNumber().equals(number)) {
+    
   			r1.add(new Reservation (name,phone,Datein,Dateout,number,pay));
   			revflage=true;
   		 
          
     }
     
-   // public static ArrayList<Units> unit=new ArrayList <Units>();
+  
     public void viewRevesation() {
         boolean found = false;
           
         for (Reservation Rev : r1 ) {
-        	   System.out.println("------------------------------------------");
-                System.out.println("The date of entry into the unit : " + Rev.getCheckInDate());
-                System.out.println("The date of leaving the residence: " + Rev.getCheckOutDate());
-                System.out.println("ContactInformation: " + Rev.getContactInformation());
-                System.out.println("Name: " + Rev.getTenantName());
-                System.out.println("The number of the apartment that was rented: " + Rev.getUnitnumber());
-                System.out.println("House rent was paid at a rate : " + Rev.getPay());
-               // System.out.println("Reservation: " + Unitlist.getReservations());
-                System.out.println("------------------------------------------");
+        	LOGGER.log(Level.INFO,"------------------------------------------");
+        	LOGGER.log(Level.INFO,"The date of entry into the unit : " + Rev.getCheckInDate());
+        	LOGGER.log(Level.INFO,"The date of leaving the residence: " + Rev.getCheckOutDate());
+        	LOGGER.log(Level.INFO,"ContactInformation: " + Rev.getContactInformation());
+        	LOGGER.log(Level.INFO,"Name: " + Rev.getTenantName());
+        	LOGGER.log(Level.INFO,"The number of the apartment that was rented: " + Rev.getUnitnumber());
+        	LOGGER.log(Level.INFO,"House rent was paid at a rate : " + Rev.getPay());
+              
+        	LOGGER.log(Level.INFO,"------------------------------------------");
                 found = true;
             
         
@@ -151,12 +153,12 @@ public static void setApproved(boolean approved) {
           
         for (Reservation Rev : r1 ) {
            
-        	   System.out.println("-----------------------------------------");
-                System.out.println("getContactInformation: " + Rev.getContactInformation());
-                System.out.println("TenantName: " + Rev.getTenantName());
+        	LOGGER.log(Level.INFO,"-----------------------------------------");
+        	LOGGER.log(Level.INFO,"getContactInformation: " + Rev.getContactInformation());
+        	LOGGER.log(Level.INFO,"TenantName: " + Rev.getTenantName());
               
-               // System.out.println("Reservation: " + Unitlist.getReservations());
-                System.out.println("----------------------------------------");
+              
+        	LOGGER.log(Level.INFO,"----------------------------------------");
                 found = true;
             infoflage=true;
         

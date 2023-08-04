@@ -3,8 +3,10 @@ package najah.edu.acceptance;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class OwnerClass {
+	 private static final Logger LOGGER = Logger.getLogger(Reservation.class.getName());
 	public static Boolean owneraddhouse ;
 	public static Boolean flagepicture;
 	
@@ -36,7 +38,7 @@ public class OwnerClass {
     }
     
 	public OwnerClass() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public String getContactInformation() {
@@ -72,13 +74,13 @@ public class OwnerClass {
 	
 	public HousingAdvertisement owneraddNewHousing() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the title of the housing advertisement: ");
+        LOGGER.log(Level.INFO,"Enter the title of the housing advertisement: ");
         String title = scanner.nextLine();
 
-        System.out.print("Enter the description of the housing advertisement: ");
+        LOGGER.log(Level.INFO,"Enter the description of the housing advertisement: ");
         String description = scanner.nextLine();
 
-        System.out.print("Enter the location of the housing: ");
+        LOGGER.log(Level.INFO,"Enter the location of the housing: ");
         String location = scanner.nextLine();
 
         HousingAdvertisement newAdvertisement = new HousingAdvertisement(title, description, location,this);
@@ -86,7 +88,7 @@ public class OwnerClass {
         newAdvertisement.setApproved(false);
         
         AdminClass.housingAdvertisements.add(newAdvertisement);
-        System.out.println("New housing added successfully!");
+        LOGGER.log(Level.INFO,"New housing added successfully!");
        owneraddhouse=true;
 
         return newAdvertisement;

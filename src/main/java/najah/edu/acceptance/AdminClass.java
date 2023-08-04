@@ -2,8 +2,11 @@ package najah.edu.acceptance;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 public class AdminClass {
+	private static final Logger LOGGER = Logger.getLogger(furnitureClass.class.getName());
 	public static Boolean showdetail;
 	public static Boolean addflage;
 	public static Boolean getAddflage() {
@@ -46,47 +49,47 @@ public class AdminClass {
     public static  void viewmanagmenthouse() {
     	 for (int i = 0; i < housingAdvertisements.size(); i++) {
  	        HousingAdvertisement advertisement = housingAdvertisements.get(i);
- 	        System.out.println((i + 1) + ". " + advertisement.getTitle() + " - " + advertisement.getDescription());
- 	        System.out.println("   Approved: " + (advertisement.isApproved() ? "Yes" : "No"));
+ 	       LOGGER.log(Level.INFO,(i + 1) + ". " + advertisement.getTitle() + " - " + advertisement.getDescription());
+ 	      LOGGER.log(Level.INFO,"   Approved: " + (advertisement.isApproved() ? "Yes" : "No"));
  	    }
 
     }
     public static  void manageHousingAdvertisements() {
     	Scanner scanner = new Scanner(System.in);
 
-	    System.out.println("Housing Advertisements:");
+    	 LOGGER.log(Level.INFO,"Housing Advertisements:");
 	    for (int i = 0; i < housingAdvertisements.size(); i++) {
 	        HousingAdvertisement advertisement = housingAdvertisements.get(i);
-	        System.out.println((i + 1) + ". " + advertisement.getTitle() + " - " + advertisement.getDescription());
-	        System.out.println("   Approved: " + (advertisement.isApproved() ? "Yes" : "No"));
+	        LOGGER.log(Level.INFO,(i + 1) + ". " + advertisement.getTitle() + " - " + advertisement.getDescription());
+	        LOGGER.log(Level.INFO,"   Approved: " + (advertisement.isApproved() ? "Yes" : "No"));
 	    }
 
-	    System.out.print("Enter the advertisement number to accept/reject (0 to cancel): ");
+	    LOGGER.log(Level.INFO,"Enter the advertisement number to accept/reject (0 to cancel): ");
 	    int choice = scanner.nextInt();
 	    scanner.nextLine(); // Consume the newline character
 
 	    if (choice >= 1 && choice <= housingAdvertisements.size()) {
 	        HousingAdvertisement selectedAdvertisement = housingAdvertisements.get(choice - 1);
-	        System.out.print("Do you want to accept or reject the advertisement? (A/R): ");
+	        LOGGER.log(Level.INFO,"Do you want to accept or reject the advertisement? (A/R): ");
 	        String decision = scanner.nextLine().toUpperCase();
 
 	        if (decision.equals("A")) {
 	        	
 	        	state=true;
 	            selectedAdvertisement.setApproved(true);
-	            System.out.println("Advertisement accepted.");
+	            LOGGER.log(Level.INFO,"Advertisement accepted.");
 	        } else if (decision.equals("R")) {
 	        	
 	        	state=true;
 	            selectedAdvertisement.setApproved(false);
-	            System.out.println("Advertisement rejected.");
+	            LOGGER.log(Level.INFO,"Advertisement rejected.");
 	        } else {
-	            System.out.println("Invalid decision. Returning to the admin dashboard.");
+	        	 LOGGER.log(Level.INFO,"Invalid decision. Returning to the admin dashboard.");
 	        }
 	    } else if (choice == 0) {
-	        System.out.println("Returning to the admin dashboard.");
+	    	 LOGGER.log(Level.INFO,"Returning to the admin dashboard.");
 	    } else {
-	        System.out.println("Invalid advertisement number. Returning to the admin dashboard.");
+	    	 LOGGER.log(Level.INFO,"Invalid advertisement number. Returning to the admin dashboard.");
 	    }
     }
     
@@ -97,15 +100,15 @@ public class AdminClass {
             for (int j = 0; j < advertisement.getUnits().size(); j++) {
                 ArrayList<Reservation> reservations = advertisement.getUnits().get(j).getReservations();
                 if (reservations.isEmpty()) {
-                    System.out.println("No reservations found for the housing advertisement.");
+                	 LOGGER.log(Level.INFO,"No reservations found for the housing advertisement.");
                 } else {
-                    System.out.println("Reservations for the housing advertisement: " + advertisement.getTitle());
+                	 LOGGER.log(Level.INFO,"Reservations for the housing advertisement: " + advertisement.getTitle());
                     for (Reservation reservation : reservations) {
-                        System.out.println("Tenant: " + reservation.getTenantName());
-                        System.out.println("Contact Information: " + reservation.getContactInformation());
-                        System.out.println("Check-in Date: " + reservation.getCheckInDate());
-                        System.out.println("Check-out Date: " + reservation.getCheckOutDate());
-                        System.out.println();
+                    	 LOGGER.log(Level.INFO,"Tenant: " + reservation.getTenantName());
+                    	 LOGGER.log(Level.INFO,"Contact Information: " + reservation.getContactInformation());
+                    	 LOGGER.log(Level.INFO,"Check-in Date: " + reservation.getCheckInDate());
+                    	 LOGGER.log(Level.INFO,"Check-out Date: " + reservation.getCheckOutDate());
+                    	 LOGGER.log(Level.INFO," ");
                     }
                 }
             }
@@ -118,36 +121,36 @@ public class AdminClass {
     	
         Scanner scanner = new Scanner(System.in);
         
-        System.out.print("Enter the unit number: ");
+        LOGGER.log(Level.INFO,"Enter the unit number: ");
         String unitNumber = scanner.nextLine();
         
-         System.out.print("Enter the photo: ");
+        LOGGER.log(Level.INFO,"Enter the photo: ");
            String photo= scanner.nextLine();
 
-        System.out.print("Enter the number of bedrooms: ");
+           LOGGER.log(Level.INFO,"Enter the number of bedrooms: ");
         int bedrooms = scanner.nextInt();
 
-        System.out.print("Enter the number of bathrooms: ");
+        LOGGER.log(Level.INFO,"Enter the number of bathrooms: ");
         int bathrooms = scanner.nextInt();
         
-        System.out.print("Does the unit available ? (true/false): ");
+        LOGGER.log(Level.INFO,"Does the unit available ? (true/false): ");
         boolean available = scanner.nextBoolean();
 
-        System.out.print("monthlyRait:is it inclusive of electricity and water or not? (true/false):");
+        LOGGER.log(Level.INFO,"monthlyRait:is it inclusive of electricity and water or not? (true/false):");
         boolean monthlyRait = scanner.nextBoolean();
         
         
-        System.out.print("Do you want to add this unit to an existing housing? (true/false): ");
+        LOGGER.log(Level.INFO,"Do you want to add this unit to an existing housing? (true/false): ");
         boolean addUnitOption = scanner.nextBoolean(); 
-        System.out.println(" ");
+        LOGGER.log(Level.INFO," ");
 
         if (addUnitOption==true) {
-        	 System.out.println("------------------------------------------------------ ");
-            // Add unit to an existing housing
-            System.out.println("Enter the title of the existing housing advertisement: ");
+        	 LOGGER.log(Level.INFO,"------------------------------------------------------ ");
+           
+        	 LOGGER.log(Level.INFO,"Enter the title of the existing housing advertisement: ");
             String existingTitle =scanner.next();
             
-            System.out.println("Enter the price of the home: ");
+            LOGGER.log(Level.INFO,"Enter the price of the home: ");
             price = scanner.nextInt();
 
             HousingAdvertisement existingAdvertisement = null;
@@ -159,11 +162,11 @@ public class AdminClass {
             }
 
             if (existingAdvertisement != null) {
-            	// edit so i can add the unit here 
+            	 
                 Units newUnit = new Units(unitNumber, bedrooms, bathrooms, available,monthlyRait,photo,price);
                 existingAdvertisement.setApproved(true);
                 existingAdvertisement.addUnit(newUnit);
-                System.out.println("Unit added to the existing housing successfully!");
+                LOGGER.log(Level.INFO,"Unit added to the existing housing successfully!");
                
             } else {
                 System.out.println("Housing advertisement not found. Adding a new housing instead.");
@@ -173,7 +176,7 @@ public class AdminClass {
         } else { 
         	
 
-			// Add a completely new housing
+			
         	Units newUnit = new Units(unitNumber, bedrooms, bathrooms, available,monthlyRait,photo,price);
             addNewHousing().addUnit(newUnit); 
             
@@ -186,16 +189,16 @@ public class AdminClass {
    
     public  HousingAdvertisement addNewHousing() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the title of the housing advertisement: ");
+        LOGGER.log(Level.INFO,"Enter the title of the housing advertisement: ");
         String title = scanner.nextLine();
 
-        System.out.print("Enter the description of the housing advertisement: ");
+        LOGGER.log(Level.INFO,"Enter the description of the housing advertisement: ");
         String description = scanner.nextLine();
 
-        System.out.print("Enter the location of the housing: ");
+        LOGGER.log(Level.INFO,"Enter the location of the housing: ");
         String location = scanner.nextLine();
 
-        System.out.print("Enter the contact information for the housing advertisement: ");
+        LOGGER.log(Level.INFO,"Enter the contact information for the housing advertisement: ");
         String contactInformation = scanner.nextLine();
 
         
@@ -205,7 +208,7 @@ public class AdminClass {
         HousingAdvertisement newAdvertisement = new HousingAdvertisement(title, description, location, owner);
         newAdvertisement.setApproved(true);
         housingAdvertisements.add(newAdvertisement);
-        System.out.println("New housing added successfully!");
+        LOGGER.log(Level.INFO,"New housing added successfully!");
         HOUSEADED=true;
         return newAdvertisement;
     }
@@ -224,12 +227,12 @@ public class AdminClass {
         
         for (HousingAdvertisement advertisement : housingAdvertisements) {
             
-            System.out.println("Title: " + advertisement.getTitle());
-            System.out.println("Description: " + advertisement.getDescription());
-            System.out.println("Location: " + advertisement.getLocation());
-            System.out.println("Owner: " + advertisement.getOwner().getName());
-            System.out.println("Contact Information: " + advertisement.getOwner().getContactInformation());
-            System.out.println("------------------------");
+        	 LOGGER.log(Level.INFO,"Title: " + advertisement.getTitle());
+        	 LOGGER.log(Level.INFO,"Description: " + advertisement.getDescription());
+        	 LOGGER.log(Level.INFO,"Location: " + advertisement.getLocation());
+        	 LOGGER.log(Level.INFO,"Owner: " + advertisement.getOwner().getName());
+        	 LOGGER.log(Level.INFO,"Contact Information: " + advertisement.getOwner().getContactInformation());
+        	 LOGGER.log(Level.INFO,"------------------------");
            
         }
        showdetail=true;
@@ -241,27 +244,27 @@ public class AdminClass {
     	
        for (HousingAdvertisement advertisement : housingAdvertisements) {
           
-               System.out.println("Title: " + advertisement.getTitle());
-               System.out.println("Description: " + advertisement.getDescription());
-               System.out.println("Location: " + advertisement.getLocation());
-               System.out.println("Owner: " + advertisement.getOwner().getName());
-               System.out.println("Contact Information: " + advertisement.getOwner().getContactInformation());
-               System.out.println("------------------------");
+    	   LOGGER.log(Level.INFO,"Title: " + advertisement.getTitle());
+    	   LOGGER.log(Level.INFO,"Description: " + advertisement.getDescription());
+    	   LOGGER.log(Level.INFO,"Location: " + advertisement.getLocation());
+    	   LOGGER.log(Level.INFO,"Owner: " + advertisement.getOwner().getName());
+    	   LOGGER.log(Level.INFO,"Contact Information: " + advertisement.getOwner().getContactInformation());
+    	   LOGGER.log(Level.INFO,"------------------------");
               
            }
           showdetail=true;
      
     }
-   // public static ArrayList<HousingAdvertisement> housing;
+   
     public static OwnerClass o1=new OwnerClass ("Alaa","059978789");
 	 public static OwnerClass o2=new OwnerClass ("momen","05998979");
    
 	 public void modifyHousingData() {
     	
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the title of the housing advertisement you want to modify: ");
+        LOGGER.log(Level.INFO,"Enter the title of the housing advertisement you want to modify: ");
         String title = scanner.nextLine();
-          // n.addTestData();
+         
        
         HousingAdvertisement selectedAdvertisement = null;
       
@@ -273,54 +276,54 @@ public class AdminClass {
         }
 
         if (selectedAdvertisement != null) {
-            System.out.println("Housing Advertisement Details:");
-            System.out.println("Title: " + selectedAdvertisement.getTitle());
-            System.out.println("Description: " + selectedAdvertisement.getDescription());
-            System.out.println("Contact Information: " + selectedAdvertisement.getOwner().getContactInformation());
+        	 LOGGER.log(Level.INFO,"Housing Advertisement Details:");
+        	 LOGGER.log(Level.INFO,"Title: " + selectedAdvertisement.getTitle());
+        	 LOGGER.log(Level.INFO,"Description: " + selectedAdvertisement.getDescription());
+        	 LOGGER.log(Level.INFO,"Contact Information: " + selectedAdvertisement.getOwner().getContactInformation());
 
-            System.out.println("Select the field you want to modify:");
-            System.out.println("1. Title");
-            System.out.println("2. Description");
-            System.out.println("5. Contact Information");
+        	 LOGGER.log(Level.INFO,"Select the field you want to modify:");
+        	 LOGGER.log(Level.INFO,"1. Title");
+        	 LOGGER.log(Level.INFO,"2. Description");
+        	 LOGGER.log(Level.INFO,"5. Contact Information");
 
-            System.out.print("Enter your choice: ");
+        	 LOGGER.log(Level.INFO,"Enter your choice: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume the newline character
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter the new title: ");
+                	 LOGGER.log(Level.INFO,"Enter the new title: ");
                     String newTitle = scanner.nextLine();
                     selectedAdvertisement.setTitle(newTitle);
                     break;
                 case 2:
-                    System.out.print("Enter the new description: ");
+                	 LOGGER.log(Level.INFO,"Enter the new description: ");
                     String newDescription = scanner.nextLine();
                     selectedAdvertisement.setDescription(newDescription);
                     break;
                 case 3:
-                    System.out.print("Enter the new owner location: ");
+                	 LOGGER.log(Level.INFO,"Enter the new owner location: ");
                     String newOwnerLocation = scanner.nextLine();
                     selectedAdvertisement.getOwner().setOwnerLocation(newOwnerLocation);
                     break;
                 case 4:
-                    System.out.print("Enter the new owner Name: ");
+                	 LOGGER.log(Level.INFO,"Enter the new owner Name: ");
                     String newOwnerName = scanner.nextLine();
                     selectedAdvertisement.getOwner().setName(newOwnerName);;
                     break;
                 case 5:
-                    System.out.print("Enter the new contact information: ");
+                	 LOGGER.log(Level.INFO,"Enter the new contact information: ");
                     String newContactInformation = scanner.nextLine();
                     selectedAdvertisement.getOwner().setContactInformation(newContactInformation);
                     break;
                 default:
-                    System.out.println("Invalid choice. Returning to the admin dashboard.");
+                	 LOGGER.log(Level.INFO,"Invalid choice. Returning to the admin dashboard.");
                     break;
             }
-            System.out.println("Housing advertisement data modified successfully!");
+            LOGGER.log(Level.INFO,"Housing advertisement data modified successfully!");
             modifedflage=true;
         } else {
-            System.out.println("Housing advertisement not found. Returning to the admin dashboard.");
+        	 LOGGER.log(Level.INFO,"Housing advertisement not found. Returning to the admin dashboard.");
         }
     }
     
@@ -329,19 +332,19 @@ public class AdminClass {
 
         for (HousingAdvertisement advertisement : housingAdvertisements) {
             if (advertisement.getOwner().getName().equalsIgnoreCase(ownerName)) {
-                System.out.println("Title: " + advertisement.getTitle());
-                System.out.println("Description: " + advertisement.getDescription());
-                System.out.println("Location: " + advertisement.getLocation());
-                System.out.println("Owner: " + advertisement.getOwner().getName());
-                System.out.println("Contact Information: " + advertisement.getOwner().getContactInformation());
-                System.out.println("------------------------");
+            	 LOGGER.log(Level.INFO,"Title: " + advertisement.getTitle());
+            	 LOGGER.log(Level.INFO,"Description: " + advertisement.getDescription());
+            	 LOGGER.log(Level.INFO,"Location: " + advertisement.getLocation());
+            	 LOGGER.log(Level.INFO,"Owner: " + advertisement.getOwner().getName());
+            	 LOGGER.log(Level.INFO,"Contact Information: " + advertisement.getOwner().getContactInformation());
+            	 LOGGER.log(Level.INFO,"------------------------");
                 found = true;
             }
            showdetail=true;
         }
 
         if (!found) {
-            System.out.println("No housing advertisements found for owner: " + ownerName);
+        	 LOGGER.log(Level.INFO,"No housing advertisements found for owner: " + ownerName);
         }
     }
 	public static Boolean getShowdetail() {

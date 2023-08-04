@@ -1,9 +1,11 @@
 package najah.edu.acceptance;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class furnitureClass {
-	
+	 private static final Logger LOGGER = Logger.getLogger(furnitureClass.class.getName());
 	    private String type;
 	    private String material;
 	    private double price;
@@ -18,14 +20,14 @@ public class furnitureClass {
 			Furnitflage = furnitflage;
 		}
 
-		// Constructor
+		
 	    public furnitureClass (String type, String material, double price) {
 	        this.type = type;
 	        this.material = material;
 	        this.price = price;
 	    }
 
-	    // Getters and Setters
+	  
 	    public String getType() {
 	        return type;
 	    }
@@ -54,10 +56,10 @@ public class furnitureClass {
 	    public void displayInfo() {
 
 	        for (furnitureClass f : furnit ) {
-	        System.out.println("Furniture Type: " +f.getType());
-	        System.out.println("Material: " + f.getMaterial());
-	        System.out.println("Price:$" + f.getPrice());
-	        System.out.println("---------------------------------");
+	        	 LOGGER.log(Level.INFO,"Furniture Type: " +f.getType());
+	        	 LOGGER.log(Level.INFO,"Material: " + f.getMaterial());
+	        	 LOGGER.log(Level.INFO,"Price:$" + f.getPrice());
+	        	 LOGGER.log(Level.INFO,"---------------------------------");
 	    }
 	    }
 	    public static ArrayList<furnitureClass> furnit=new ArrayList<furnitureClass>();

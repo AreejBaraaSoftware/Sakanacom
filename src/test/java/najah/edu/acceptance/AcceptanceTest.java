@@ -9,11 +9,12 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "features",
+		features = "CaseFeature//owneraddunit.feature",
 		plugin = {"summary","html:target/cucumber/report.html"},
 		monochrome=true,
 		snippets=SnippetType.CAMELCASE,
 		glue="najah.edu.acceptance")
 public class AcceptanceTest {
 
+	
 }

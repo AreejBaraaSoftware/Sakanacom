@@ -5,31 +5,31 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class TenantClass {
 	 private static final Logger LOGGER = Logger.getLogger(TenantClass.class.getName());
-	private final static List <TenantClass> Tenant= new ArrayList<TenantClass>();
+	 private static final List<TenantClass> Tenant= new ArrayList<TenantClass>();
 	
-  public static String name;
-  public static  String phone;
-  public static String location;
-public static String getName() {
+	 private static  String name;
+	 private static   String phone;
+	 private static  String location;
+private String getName() {
 	return name;
 }
-public static void setName(String name) {
+private  void setName(String name) {
 	TenantClass.name = name;
 }
-public static String getPhone() {
+private  String getPhone() {
 	return phone;
 }
-public static void setPhone(String phone) {
+private  void setPhone(String phone) {
 	TenantClass.phone = phone;
 }
-public static String getLocation() {
+private String getLocation() {
 	return location;
 }
-public static void setLocation(String location) {
+private  void setLocation(String location) {
 	TenantClass.location = location;
 }
   
@@ -59,3 +59,10 @@ public static  void payprice () {
 }
 
 }
+
+
+
+  
+
+
+

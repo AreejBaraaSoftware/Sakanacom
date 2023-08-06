@@ -11,25 +11,25 @@ public class TenantClass {
 	 private static final Logger LOGGER = Logger.getLogger(TenantClass.class.getName());
 	 private static final List<TenantClass> Tenant= new ArrayList<TenantClass>();
 	
-	 private static  String name;
-	 private static   String phone;
-	 private static  String location;
-private String getName() {
+	public static  String name;
+	public static  String phone;
+	public static String location;
+	public static String getName() {
 	return name;
 }
-private  void setName(String name) {
+public static void setName(String name) {
 	TenantClass.name = name;
 }
-private  String getPhone() {
+public static String getPhone() {
 	return phone;
 }
-private  void setPhone(String phone) {
+public static void setPhone(String phone) {
 	TenantClass.phone = phone;
 }
-private String getLocation() {
+public static String getLocation() {
 	return location;
 }
-private  void setLocation(String location) {
+public static void setLocation(String location) {
 	TenantClass.location = location;
 }
   
@@ -59,5 +59,3 @@ public static  void payprice () {
 }
 
 }
-
-

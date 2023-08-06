@@ -31,7 +31,7 @@ public class Main {
 	    users.add(new User("Areej", "A***", "admin")); 
 	    users.add(new User("Alaa", "O***", "owner"));   	
     }
-    public static   Reservation R1=new Reservation();
+   static   Reservation R1=new Reservation();
     public static void  addTestData() {
     	HousingAdvertisement ad1 = new HousingAdvertisement("Title 1", "Description 1","Nablus",o1);
         HousingAdvertisement ad2 = new HousingAdvertisement("Title 2", "Description 2","Ramallah",o2);

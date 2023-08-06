@@ -1,6 +1,7 @@
 package najah.edu.acceptance;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import java.util.logging.Level;
@@ -21,8 +22,9 @@ public class Reservation {
 	 public  String checkInDate;
 	 public  String checkOutDate;
      public  String unitnumber;
-   public static boolean  revflage;
-   public static boolean infoflage;
+     private   static boolean  revflage =false ;
+   
+    private   static boolean infoflage=false;
    public static boolean isInfoflage() {
 	return infoflage;
 }
@@ -49,13 +51,13 @@ public Reservation(String tenantName, String contactInformation, String checkInD
 		this.unitnumber = unitnumber;
 		this.pay=pay;
 	}
-public static boolean Approved;
+private   static boolean Approved=false ;
     
     public Reservation() {
 	super();
 }
-public static Units n=new Units();
-public static AdminClass admin=new AdminClass();
+ static Units n=new Units();
+ static AdminClass admin=new AdminClass();
 	public static boolean isApproved() {
 	return Approved;
 }
@@ -103,8 +105,8 @@ public static void setApproved(boolean approved) {
         this.checkOutDate = checkOutDate;
     }
     
-    public static ArrayList<Units> unit=new ArrayList <Units>();
-    public static ArrayList<Reservation> r1=new ArrayList <Reservation>();
+    private static final List<Units> unit=new ArrayList <Units>();
+    private static final List<Reservation> r1=new ArrayList <Reservation>();
     public static void Reversehome() {
     	n.viewunit();
     	 Scanner scanner = new Scanner(System.in);
@@ -113,23 +115,23 @@ public static void setApproved(boolean approved) {
          LOGGER.log(Level.INFO,"Enter name : ");
          String name = scanner.nextLine();
          LOGGER.log(Level.INFO,"Enter checkInDate : ");
-         String Datein = scanner.nextLine();
+         String datein = scanner.nextLine();
          LOGGER.log(Level.INFO,"Enter checkOutDate : ");
-         String Dateout = scanner.nextLine();
+         String dateout = scanner.nextLine();
          LOGGER.log(Level.INFO,"Enter information phone number or any thing to connect  : ");
          String phone = scanner.nextLine();
          LOGGER.log(Level.INFO,"pay the rent : ");
         int pay = scanner.nextInt();
     
-  			r1.add(new Reservation (name,phone,Datein,Dateout,number,pay));
+  			r1.add(new Reservation (name,phone,datein,dateout,number,pay));
   			revflage=true;
   		 
          
     }
     
-  
+    private   static boolean found = false;
     public void viewRevesation() {
-        boolean found = false;
+    	
           
         for (Reservation Rev : r1 ) {
         	LOGGER.log(Level.INFO,"------------------------------------------");
@@ -160,7 +162,7 @@ public static void setApproved(boolean approved) {
        
     }
     public void viewpersonaldataTenant() {
-        boolean found = false;
+      
           
         for (Reservation Rev : r1 ) {
            
@@ -192,3 +194,5 @@ public static void setApproved(boolean approved) {
 	} 
 
 }
+
+      

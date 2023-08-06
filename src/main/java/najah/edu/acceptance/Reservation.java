@@ -133,23 +133,23 @@ public static void setApproved(boolean approved) {
           
         for (Reservation Rev : r1 ) {
         	LOGGER.log(Level.INFO,"------------------------------------------");
-        	LOGGER.log(Level.INFO,"The date of entry into the unit : ");
-        	LOGGER.log(Level.INFO, Rev.getCheckInDate());
-        	LOGGER.log(Level.INFO,"\n");
-        	LOGGER.log(Level.INFO,"The date of leaving the residence: ");
-        	LOGGER.log(Level.INFO, Rev.getCheckOutDate());
-        	LOGGER.log(Level.INFO,"\n");
-        	LOGGER.log(Level.INFO,"ContactInformation: " );
-        	LOGGER.log(Level.INFO,Rev.getContactInformation());
-        	LOGGER.log(Level.INFO,"\n");
-        	LOGGER.log(Level.INFO,"Name: " );
-        	LOGGER.log(Level.INFO, Rev.getTenantName());
-        	LOGGER.log(Level.INFO,"\n");
-        	LOGGER.log(Level.INFO,"The number of the apartment that was rented: " );
-        	LOGGER.log(Level.INFO,Rev.getUnitnumber());
-        	LOGGER.log(Level.INFO,"\n");
+        	LOGGER.log(Level.INFO,"The date of entry into the unit :{0} "+ Rev.getCheckInDate());
+        	
+        	
+        	LOGGER.log(Level.INFO,"The date of leaving the residence:{0} "+ Rev.getCheckOutDate());
+        	
+        	
+        	LOGGER.log(Level.INFO,"ContactInformation: {0}" +Rev.getContactInformation());
+        	
+        	
+        	LOGGER.log(Level.INFO,"Name:{0} "+Rev.getTenantName() );
+        	
+        	
+        	LOGGER.log(Level.INFO,"The number of the apartment that was rented:{0} "+Rev.getUnitnumber() );
+        	
+        	
         	LOGGER.log(Level.INFO,"House rent was paid at a rate :{0} " + Rev.getPay());
-        	LOGGER.log(Level.INFO,"\n");
+        	
         	LOGGER.log(Level.INFO,"------------------------------------------");
                 found = true;
             
@@ -164,10 +164,10 @@ public static void setApproved(boolean approved) {
         for (Reservation Rev : r1 ) {
            
         	LOGGER.log(Level.INFO,"-----------------------------------------");
-        	LOGGER.log(Level.INFO,"getContactInformation: "+Rev.getContactInformation());
+        	LOGGER.log(Level.INFO,"getContactInformation:{0} "+Rev.getContactInformation());
         	
         	
-        	LOGGER.log(Level.INFO,"TenantName: "+Rev.getTenantName() );
+        	LOGGER.log(Level.INFO,"TenantName: {0}"+Rev.getTenantName() );
         	
         
               

@@ -11,9 +11,9 @@ public class TenantClass {
 	 private static final Logger LOGGER = Logger.getLogger(TenantClass.class.getName());
 	 private static final List<TenantClass> Tenant= new ArrayList<TenantClass>();
 	
-	public static  String name;
-	public static  String phone;
-	public static String location;
+	private static  String name;
+	private static  String phone;
+	private static String location;
 	public static String getName() {
 	return name;
 }
@@ -59,3 +59,4 @@ public static  void payprice () {
 }
 
 }
+

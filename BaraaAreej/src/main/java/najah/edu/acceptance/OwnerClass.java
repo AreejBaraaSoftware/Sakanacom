@@ -32,7 +32,7 @@ public class OwnerClass {
 	private String name;
     private String contactInformation;
     private String ownerLocation;
-    private ArrayList<String> photos;
+ 
     
 	
     public OwnerClass(String name, String contactInformation) {
@@ -60,12 +60,7 @@ public class OwnerClass {
 		this.name = name;
 	}
 
-	public ArrayList<String> getPhotos() {
-		return photos;
-	}
-	public void addPhoto(String photo) {
-	    photos.add(photo);
-	}
+	
 
 	public String getOwnerLocation() {
 		return ownerLocation;
@@ -92,7 +87,7 @@ public class OwnerClass {
         
         AdminClass.housingAdvertisements.add(newAdvertisement);
         LOGGER.log(Level.INFO,"New housing added successfully!");
-       owneraddhouse=true;
+          owneraddhouse=true;
 
         return newAdvertisement;
     }
@@ -100,4 +95,3 @@ public class OwnerClass {
 	  private static final List<Units> unit=new ArrayList <Units>();
 	
 }
-

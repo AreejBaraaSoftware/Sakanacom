@@ -24,7 +24,8 @@ public class Main {
 	   static User loggedInUser;
 	   private static final List<User> users = new ArrayList<User>();
 	
-    public static void userlogin () {
+    public static void userlogin () 
+	{
     	ArrayList<User> users = new ArrayList<User>();
     	users.add(new User("Baraa", "T***", "tenant")); 
 	    users.add(new User("Areej", "A***", "admin")); 

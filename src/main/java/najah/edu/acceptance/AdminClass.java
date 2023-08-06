@@ -7,7 +7,7 @@ import java.util.logging.Level;
 
 public class AdminClass {
 	private static final Logger LOGGER = Logger.getLogger(AdminClass.class.getName());
-	 static final String Dash = " -------------------------------------------------";
+	 static final String DASH = " -------------------------------------------------";
 	public static Boolean showdetail;
 	 static Boolean addflage;
 	public static Boolean getAddflage() {
@@ -147,7 +147,7 @@ public class AdminClass {
         LOGGER.log(Level.INFO," ");
 
         if (addUnitOption==true) {
-        	 LOGGER.log(Level.INFO,Dash);
+        	 LOGGER.log(Level.INFO,DASH);
            
         	 LOGGER.log(Level.INFO,"Enter the title of the existing housing advertisement: ");
             String existingTitle =scanner.next();
@@ -234,7 +234,7 @@ public class AdminClass {
         	 LOGGER.log(Level.INFO,"Location: " + advertisement.getLocation());
         	 LOGGER.log(Level.INFO,"Owner: " + advertisement.getOwner().getName());
         	 LOGGER.log(Level.INFO,"Contact Information: " + advertisement.getOwner().getContactInformation());
-        	 LOGGER.log(Level.INFO,Dash);
+        	 LOGGER.log(Level.INFO,DASH);
            
         }
        showdetail=true;
@@ -251,7 +251,7 @@ public class AdminClass {
     	   LOGGER.log(Level.INFO,"Location: " + advertisement.getLocation());
     	   LOGGER.log(Level.INFO,"Owner: " + advertisement.getOwner().getName());
     	   LOGGER.log(Level.INFO,"Contact Information: " + advertisement.getOwner().getContactInformation());
-    	   LOGGER.log(Level.INFO,Dash);
+    	   LOGGER.log(Level.INFO,DASH);
               
            }
           showdetail=true;
@@ -339,7 +339,7 @@ public class AdminClass {
             	 LOGGER.log(Level.INFO,"Location: " + advertisement.getLocation());
             	 LOGGER.log(Level.INFO,"Owner: " + advertisement.getOwner().getName());
             	 LOGGER.log(Level.INFO,"Contact Information: " + advertisement.getOwner().getContactInformation());
-            	 LOGGER.log(Level.INFO,Dash);
+            	 LOGGER.log(Level.INFO,DASH);
                 found = true;
             }
            showdetail=true;
@@ -362,3 +362,5 @@ public class AdminClass {
 } 
 
     
+
+	

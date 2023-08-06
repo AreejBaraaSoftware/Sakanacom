@@ -9,22 +9,20 @@ import java.util.logging.Logger;
 public class Reservation {
 	 private static final Logger LOGGER = Logger.getLogger(Reservation.class.getName());
 	public static ArrayList<Reservation> Reservelist;
-	 public  String tenantName;
-	 public  int pay;
-	 public int getPay() 
-	{
+	 private  String tenantName;
+	 private  int pay;
+	 private int getPay() {
 		return pay;
 	}
 
-	
 	public void setPay(int pay) {
 		this.pay = pay;
 	}
-	public  String contactInformation;
-	 public  String checkInDate;
-	 public  String checkOutDate;
-     public  String unitnumber;
-     private   static boolean  revflage =false ;
+	private  String contactInformation;
+	private  String checkInDate;
+	private  String checkOutDate;
+	private  String unitnumber;
+	private   static boolean  revflage =false ;
    
     private   static boolean infoflage=false;
    public static boolean isInfoflage() {
@@ -53,7 +51,7 @@ public Reservation(String tenantName, String contactInformation, String checkInD
 		this.unitnumber = unitnumber;
 		this.pay=pay;
 	}
-private   static boolean Approved=false ;
+private   static boolean APPROVED=false ;
     
     public Reservation() {
 	super();
@@ -61,11 +59,11 @@ private   static boolean Approved=false ;
  static Units n=new Units();
  static AdminClass admin=new AdminClass();
 	public static boolean isApproved() {
-	return Approved;
+	return APPROVED;
 }
 
 public static void setApproved(boolean approved) {
-	Approved = approved;
+	APPROVED = approved;
 }
 
 	public Reservation(String tenantName, String contactInformation, String checkInDate, String checkOutDate) {
@@ -109,7 +107,7 @@ public static void setApproved(boolean approved) {
     
     private static final List<Units> unit=new ArrayList <Units>();
     private static final List<Reservation> r1=new ArrayList <Reservation>();
-    public static void Reversehome() {
+    public static void ReverSehome() {
     	n.viewunit();
     	 Scanner scanner = new Scanner(System.in);
     	 LOGGER.log(Level.INFO,"Enter number unit to reseve : ");
@@ -196,5 +194,3 @@ public static void setApproved(boolean approved) {
 	} 
 
 }
-
-      

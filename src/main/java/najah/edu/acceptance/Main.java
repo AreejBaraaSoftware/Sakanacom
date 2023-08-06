@@ -7,16 +7,8 @@ import java.util.ArrayList;
 public class Main {
 	
 	
-	static boolean Exit_Flage=false;
 	
-	 static final boolean isExitflage() {
-		return Exit_Flage;
-	}
-	public static void setExitflage(boolean exitflage) {
-		Exit_Flage = exitflage;
-	}
-	public static  boolean tenantflage=false;
-	 public static AdminClass admin = new AdminClass();
+	public static AdminClass admin = new AdminClass();
 	 public static OwnerClass o1=new OwnerClass ("Alaa","059978789");
 	 public static OwnerClass o2=new OwnerClass ("momen","05998979");
      public static Units u=new Units();
@@ -59,7 +51,3 @@ public class Main {
 		userlogin();
 	}
 }
-
-	
-  
-

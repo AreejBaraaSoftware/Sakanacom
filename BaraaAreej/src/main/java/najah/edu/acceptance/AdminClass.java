@@ -8,10 +8,10 @@ import java.util.logging.Level;
 public class AdminClass {
 	private static final Logger LOGGER = Logger.getLogger(AdminClass.class.getName());
 	 static final String DASH = " -------------------------------------------------";
-	public static Boolean showdetail;
-	
+	//public static Boolean showdetail;
+	 public static Boolean showdetail = false;
 	 
-	 static Boolean addflage;
+	 static Boolean addflage=false;
 	public static Boolean getAddflage() {
 		return addflage;
 	}
@@ -19,8 +19,8 @@ public class AdminClass {
 		AdminClass.addflage = addflage;
 	}
 
-	public static Boolean state;
-	public static Boolean modifedflage;
+	public static Boolean state=false;
+	public static Boolean modifedflage=false;
 	public static Boolean getModifedflage() {
 		return modifedflage;
 	}
@@ -28,7 +28,7 @@ public class AdminClass {
 		AdminClass.modifedflage = modifedflage;
 	}
 
-	public static boolean HOUSEADED;
+	public static boolean HOUSEADED=false ;
 	public static boolean isHOUSEADED() {
 		return HOUSEADED;
 	}
@@ -362,10 +362,5 @@ public class AdminClass {
 	
     
 } 
-
-    
-
-	
-	
 
     

@@ -6,10 +6,9 @@ import java.util.ArrayList;
 
 public class Main {
 	
-	 static final boolean adminflag=false;
-	 static final boolean userflage=false;
+	
 	static boolean Exitflage=false;
-	static final  boolean ownerflage=false;
+	
 	 static final boolean isExitflage() {
 		return Exitflage;
 	}

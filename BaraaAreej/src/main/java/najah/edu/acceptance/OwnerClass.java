@@ -1,15 +1,17 @@
 package najah.edu.acceptance;
 
+
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class OwnerClass {
 	 private static final Logger LOGGER = Logger.getLogger(OwnerClass.class.getName());
-	public static Boolean owneraddhouse ;
+	  private   static boolean owneraddhouse =false ;
 	
-	public static Boolean flagepicture;
+	  static boolean flagepicture=false;
 	
 	public static Boolean getFlagepicture() {
 		return flagepicture;
@@ -95,6 +97,6 @@ public class OwnerClass {
         return newAdvertisement;
     }
 	 public static Units u=new Units();
-	public static ArrayList<Units> unit=new ArrayList <Units>();
+	  private static final List<Units> unit=new ArrayList <Units>();
 	
 }

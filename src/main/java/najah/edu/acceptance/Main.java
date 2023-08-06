@@ -7,13 +7,13 @@ import java.util.ArrayList;
 public class Main {
 	
 	
-	static boolean Exitflage=false;
+	static boolean ExitFlage=false;
 	
 	 static final boolean isExitflage() {
-		return Exitflage;
+		return ExitFlage;
 	}
 	public static void setExitflage(boolean exitflage) {
-		Exitflage = exitflage;
+		ExitFlage = exitflage;
 	}
 	public static  boolean tenantflage=false;
 	 public static AdminClass admin = new AdminClass();
@@ -59,3 +59,7 @@ public class Main {
 		userlogin();
 	}
 }
+
+	
+  
+

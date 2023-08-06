@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 
 public class HousingAdvertisement {
-	 private static final Logger LOGGER = Logger.getLogger(HousingAdvertisement.class.getName());
+	
     private String title;
     private String description;
     private String location;
@@ -18,7 +18,7 @@ public class HousingAdvertisement {
         this.location=location;
         this.approved = false;
         this.setOwner(owner);
-        this.units = new ArrayList<Units>();
+       
     }
     public String getTitle() {
         return title;

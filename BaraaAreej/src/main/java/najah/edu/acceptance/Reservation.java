@@ -11,7 +11,8 @@ public class Reservation {
 	public static ArrayList<Reservation> Reservelist;
 	 public  String tenantName;
 	 public  int pay;
-	 public int getPay() {
+	 public int getPay() 
+	{
 		return pay;
 	}
 

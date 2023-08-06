@@ -148,8 +148,8 @@ public static void setApproved(boolean approved) {
         	LOGGER.log(Level.INFO,"The number of the apartment that was rented: " );
         	LOGGER.log(Level.INFO,Rev.getUnitnumber());
         	
-        	LOGGER.log(Level.INFO,"House rent was paid at a rate :" );
-		LOGGER.log(Level.INFO,Rev.getPay());
+        	LOGGER.log(Level.INFO,"House rent was paid at a rate :{0}"+ Rev.getPay());
+		
         	
         	LOGGER.log(Level.INFO,"------------------------------------------");
                 found = true;

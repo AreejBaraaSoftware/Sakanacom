@@ -173,13 +173,18 @@ public static void setMonthlyflage(Boolean monthlyflage) {
 
         for (Units Unitlist : unit ) {
            
-        	LOGGER.log(Level.INFO,"unitnumber: " + Unitlist.getUnitNumber());
-        	LOGGER.log(Level.INFO,"bathrooms: " + Unitlist.getBathrooms());
-        	LOGGER.log(Level.INFO,"bedroom: " + Unitlist.getBedrooms());
+        	LOGGER.log(Level.INFO,"unitnumber: "+Unitlist.getUnitNumber());
+        	
+        	
+        	LOGGER.log(Level.INFO,"bathrooms: ",Unitlist.getBathrooms());
+        	
+        	LOGGER.log(Level.INFO,"bedroom: " , Unitlist.getBedrooms());
+        	
         	LOGGER.log(Level.INFO,"monthly: " + Unitlist.isMonthlyRent());
+        
         	LOGGER.log(Level.INFO,"price: " + Unitlist.getPrice());
-             
-            	LOGGER.log(Level.INFO,  "------------------------");
+        	
+            LOGGER.log(Level.INFO,  "------------------------");
                 found = true;
             
         
@@ -191,10 +196,12 @@ public static void setMonthlyflage(Boolean monthlyflage) {
         boolean found = false;
 
         for (Units Unitlist : unit ) {
-        	LOGGER.log(Level.INFO, "unitnumber:"+Unitlist.getUnitNumber());
+        	LOGGER.log(Level.INFO, "unitnumber:"+ Unitlist.getUnitNumber());
         
-        	LOGGER.log(Level.INFO, "photo:"+Unitlist.getPhotounit());
-            
+        
+        	LOGGER.log(Level.INFO, "photo:"+ Unitlist.getPhotounit());
+        	
+        	
                 
                
               
@@ -280,9 +287,12 @@ public static void setMonthlyflage(Boolean monthlyflage) {
 
 	        for (Units Unitlist : unit) {
 	            
-	        	LOGGER.log(Level.INFO,"numberunit: " + Unitlist.getUnitNumber());
-	        	LOGGER.log(Level.INFO,"photo: " + Unitlist.getPhotounit());
-	               
+	        	LOGGER.log(Level.INFO,"numberunit: " +Unitlist.getUnitNumber());
+	        	
+	        	
+	        	LOGGER.log(Level.INFO,"photo: "+Unitlist.getPhotounit() );
+	        	
+	        	LOGGER.log(Level.INFO,"\n");
 	                found = true;
 	           
 	           

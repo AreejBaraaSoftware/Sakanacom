@@ -57,9 +57,14 @@ public class furnitureClass {
 	    public void displayInfo() {
 
 	        for (furnitureClass f : furnit ) {
-	        	 LOGGER.log(Level.INFO,"Furniture Type: " +f.getType());
-	        	 LOGGER.log(Level.INFO,"Material: " + f.getMaterial());
-	        	 LOGGER.log(Level.INFO,"Price:$" + f.getPrice());
+	        	 LOGGER.log(Level.INFO,"Furniture Type:"+f.getType());
+	        	 
+	        	
+	        	 LOGGER.log(Level.INFO,"Material:"+f.getMaterial());
+	        	
+	        	
+	        	 LOGGER.log(Level.INFO,"Price:$ " +f.getPrice());
+	        	
 	        	 LOGGER.log(Level.INFO,"-----------------------------------------");
 	    }
 	    }

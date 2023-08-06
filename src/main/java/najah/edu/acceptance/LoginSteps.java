@@ -158,7 +158,7 @@ public class LoginSteps {
 							return i;
 						}
 						else {
-							 LOGGER.log(Level.INFO, "please enter password again");
+							 LOGGER.log(Level.INFO, PASS);
 							String pas=input2.nextLine();
 							if(workerlogin.get(i).password.equals(pas)) {
 								flag =true;
@@ -180,7 +180,7 @@ public class LoginSteps {
 								return i;
 							}
 							else {
-								 LOGGER.log(Level.INFO, "please enter password again");
+								 LOGGER.log(Level.INFO, PASS);
 								String pas=input2.nextLine();
 								if(ownerlogin.get(i).password.equals(pas)) {
 									flag =true;
@@ -206,7 +206,7 @@ public class LoginSteps {
 						return i;
 					}
 					else {
-						 LOGGER.log(Level.INFO, "please enter password again");
+						 LOGGER.log(Level.INFO, PASS);
 						String pas=input2.nextLine();
 						if(userslogin.get(i).password.equals(pas)) {
 							flag =true;
@@ -224,7 +224,7 @@ public class LoginSteps {
 								return i;
 							}
 							else {
-								 LOGGER.log(Level.INFO, "please enter password again");
+								 LOGGER.log(Level.INFO, PASS);
 								String pas=input2.nextLine();
 								if(workerlogin.get(i).password.equals(pas)) {
 									flag =true;
@@ -244,7 +244,7 @@ public class LoginSteps {
 									return i;
 								}
 								else {
-									 LOGGER.log(Level.INFO,"please enter password again");
+									 LOGGER.log(Level.INFO,PASS);
 									String pas=input2.nextLine();
 									if(ownerlogin.get(i).password.equals(pas)) {
 										flag =true;

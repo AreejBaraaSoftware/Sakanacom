@@ -168,24 +168,21 @@ public static void setMonthlyflage(Boolean monthlyflage) {
 		this.monthlyRent = monthlyRent;
 	}
 	public static ArrayList<Units> unit=new ArrayList <Units>();
-    
-	public void viewunit() {
+    public void viewunit() {
         boolean found = false;
 
         for (Units Unitlist : unit ) {
            
-        	LOGGER.log(Level.INFO,"unitnumber:{0}",Unitlist.getUnitNumber());
-        	//LOGGER.log(Level.INFO,Unitlist.getUnitNumber());
+        	LOGGER.log(Level.INFO,"unitnumber: {0}",Unitlist.getUnitNumber()+" ");
         	
         	
-        	LOGGER.log(Level.INFO,"bathrooms: {0}",Unitlist.getBathrooms());
+        	LOGGER.log(Level.INFO,"bathrooms:{0} ",Unitlist.getBathrooms()+" ");
         	
-        	LOGGER.log(Level.INFO,"bedroom:{0} " , Unitlist.getBedrooms());
+        	LOGGER.log(Level.INFO,"bedroom:{0} " , Unitlist.getBedrooms()+" ");
         	
-        	LOGGER.log(Level.INFO,"monthly:{0}",Unitlist.isMonthlyRent() );
-        	
+        	LOGGER.log(Level.INFO,"monthly:{0} " , Unitlist.isMonthlyRent()+" ");
         
-        	LOGGER.log(Level.INFO,"price:{0} " + Unitlist.getPrice());
+        	LOGGER.log(Level.INFO,"price:{0} " , Unitlist.getPrice()+" ");
         	
             LOGGER.log(Level.INFO,  "------------------------");
                 found = true;
@@ -199,10 +196,10 @@ public static void setMonthlyflage(Boolean monthlyflage) {
         boolean found = false;
 
         for (Units Unitlist : unit ) {
-        	LOGGER.log(Level.INFO, "unitnumber:"+ Unitlist.getUnitNumber());
+        	LOGGER.log(Level.INFO, "unitnumber:{0}",Unitlist.getUnitNumber()+" ");
         
         
-        	LOGGER.log(Level.INFO, "photo:"+ Unitlist.getPhotounit());
+        	LOGGER.log(Level.INFO, "photo:{0}", Unitlist.getPhotounit()+" ");
         	
         	
                 
@@ -290,10 +287,10 @@ public static void setMonthlyflage(Boolean monthlyflage) {
 
 	        for (Units Unitlist : unit) {
 	            
-	        	LOGGER.log(Level.INFO,"numberunit: " +Unitlist.getUnitNumber());
+	        	LOGGER.log(Level.INFO,"numberunit:{0} " ,Unitlist.getUnitNumber()+" ");
 	        	
 	        	
-	        	LOGGER.log(Level.INFO,"photo: "+Unitlist.getPhotounit() );
+	        	LOGGER.log(Level.INFO,"photo:{0} ",Unitlist.getPhotounit()+" " );
 	        	
 	        	LOGGER.log(Level.INFO,"\n");
 	                found = true;

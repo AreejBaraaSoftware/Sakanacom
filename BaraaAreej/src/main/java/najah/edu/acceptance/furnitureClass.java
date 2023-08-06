@@ -1,6 +1,7 @@
 package najah.edu.acceptance;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -10,19 +11,22 @@ public class furnitureClass {
 	    private String type;
 	    private String material;
 	    private double price;
-	    public static boolean Furnitflage;
-	   
-
-		public boolean isFurnitflage() {
-			return Furnitflage;
-		}
-
-		public void setFurnitflage(boolean furnitflage) {
-			Furnitflage = furnitflage;
-		}
+	   // public static boolean Furnitflage;
+	    private   static boolean furnitFlage =false;
 
 		
-	    public furnitureClass (String type, String material, double price) {
+		
+	    public static boolean isFurnitFlage() {
+			return furnitFlage;
+		}
+
+
+		public static void setFurnitFlage(boolean furnitFlage) {
+			furnitureClass.furnitFlage = furnitFlage;
+		}
+
+
+		public furnitureClass (String type, String material, double price) {
 	        this.type = type;
 	        this.material = material;
 	        this.price = price;
@@ -68,13 +72,13 @@ public class furnitureClass {
 	        	 LOGGER.log(Level.INFO,"-----------------------------------------");
 	    }
 	    }
-	    public static ArrayList<furnitureClass> furnit=new ArrayList<furnitureClass>();
+	    public static List<furnitureClass> furnit=new ArrayList<furnitureClass>();
 
 	    public static  void initfurniture () {
 	    	furnit.add(new furnitureClass("Table", "Wood", 199.99) );
 	    	furnit.add(new furnitureClass("chiar", "Wood", 200.99) );
-	 //  furnit.add(new furnitureClass("TV", "---", 1000) );
-	    	Furnitflage=true;
+	
+	    	furnitFlage=true;
 	    	
 	    }
 

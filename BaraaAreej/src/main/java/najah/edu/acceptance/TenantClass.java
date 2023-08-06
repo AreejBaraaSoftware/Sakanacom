@@ -61,8 +61,3 @@ public static  void payprice () {
 }
 
 
-
-  
-
-
-

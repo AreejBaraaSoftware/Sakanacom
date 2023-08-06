@@ -20,7 +20,7 @@ public class LoginSteps {
 	
 	private   static boolean isLoginadmin =false;
 	private  static  boolean isLogincustomer =false;
-	//private  static  boolean isLoginowner =false;
+	
 	private static boolean isLoginworker =false;
 	private static boolean isLoginonuser =false;
 	private static boolean f0 =false;
@@ -51,7 +51,7 @@ public class LoginSteps {
 	
 	public boolean getisLogincustomer() {
 		return isLogincustomer ;	
-	//   return	isLoginowner;
+	
 	}
 	public static void setisLogincustomer(boolean isLogincustomer) {
 		LoginSteps.isLogincustomer = isLogincustomer;	
@@ -190,7 +190,7 @@ public class LoginSteps {
 						  flag0=true; }
 				 
 				 }
-				 //ownerlogin
+			
 				 
 			 }
 			 
@@ -362,7 +362,9 @@ public class LoginSteps {
 	
 }
 
+ 	
 
+	
 	
      
 							 

@@ -1,6 +1,7 @@
 package najah.edu.acceptance;
 
-import java.util.ArrayList;
+
+import java.util.List;
 
 
 public class HousingAdvertisement {
@@ -9,7 +10,7 @@ public class HousingAdvertisement {
     private String description;
     private String location;
     private boolean approved;
-    private ArrayList<Units> units;
+    private List<Units> units;
     private OwnerClass owner;
 
     public HousingAdvertisement(String title, String description,String location,OwnerClass owner) {
@@ -18,7 +19,7 @@ public class HousingAdvertisement {
         this.location=location;
         this.approved = false;
         this.setOwner(owner);
-       
+      
     }
     public String getTitle() {
         return title;
@@ -58,7 +59,7 @@ public class HousingAdvertisement {
         units.remove(unit);
     }
 
-    public ArrayList<Units> getUnits() {
+    public List<Units> getUnits() {
         return units;
     }
 	public OwnerClass getOwner() {

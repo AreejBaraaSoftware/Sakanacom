@@ -8,7 +8,7 @@ import java.util.logging.Level;
 public class AdminClass {
 	private static final Logger LOGGER = Logger.getLogger(AdminClass.class.getName());
 	 static final String DASH = " -------------------------------------------------";
-	//public static Boolean showdetail;
+	
 	 public static Boolean showdetail = false;
 	 
 	 static Boolean addflage=false;

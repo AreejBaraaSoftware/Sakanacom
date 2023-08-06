@@ -96,7 +96,8 @@ public class OwnerClass {
 
         return newAdvertisement;
     }
-	 public static Units u=new Units();
+	 static Units u=new Units();
 	  private static final List<Units> unit=new ArrayList <Units>();
 	
 }
+

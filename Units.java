@@ -174,14 +174,16 @@ public static void setMonthlyflage(Boolean monthlyflage) {
 
         for (Units Unitlist : unit ) {
            
-        	LOGGER.log(Level.INFO,"unitnumber:{0} "+Unitlist.getUnitNumber());
+        	LOGGER.log(Level.INFO,"unitnumber:{0}",Unitlist.getUnitNumber());
+        	//LOGGER.log(Level.INFO,Unitlist.getUnitNumber());
         	
         	
-        	LOGGER.log(Level.INFO,"bathrooms:Result {0}. ",Unitlist.getBathrooms());
+        	LOGGER.log(Level.INFO,"bathrooms: {0}",Unitlist.getBathrooms());
         	
-        	LOGGER.log(Level.INFO,"bedroom: Result {0}." , Unitlist.getBedrooms());
+        	LOGGER.log(Level.INFO,"bedroom:{0} " , Unitlist.getBedrooms());
         	
-        	LOGGER.log(Level.INFO,"monthly:{0}" + Unitlist.isMonthlyRent());
+        	LOGGER.log(Level.INFO,"monthly:{0}",Unitlist.isMonthlyRent() );
+        	
         
         	LOGGER.log(Level.INFO,"price:{0} " + Unitlist.getPrice());
         	

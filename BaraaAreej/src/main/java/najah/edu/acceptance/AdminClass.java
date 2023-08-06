@@ -53,8 +53,8 @@ public class AdminClass {
     public static  void viewmanagmenthouse() {
     	 for (int i = 0; i < housingAdvertisements.size(); i++) {
  	        HousingAdvertisement advertisement = housingAdvertisements.get(i);
- 	       LOGGER.log(Level.INFO,(i + 1) + ". " + advertisement.getTitle() + " - " + advertisement.getDescription());
- 	      LOGGER.log(Level.INFO,"   Approved: " + (advertisement.isApproved() ? "Yes" : "No"));
+ 	       LOGGER.log(Level.INFO,(i + 1) + ".{0} " + advertisement.getTitle() + " - {0}" + advertisement.getDescription());
+ 	      LOGGER.log(Level.INFO,"   Approved: {0}" + (advertisement.isApproved() ? "Yes" : "No"));
  	    }
 
     }
@@ -64,13 +64,13 @@ public class AdminClass {
     	 LOGGER.log(Level.INFO,"Housing Advertisements:");
 	    for (int i = 0; i < housingAdvertisements.size(); i++) {
 	        HousingAdvertisement advertisement = housingAdvertisements.get(i);
-	        LOGGER.log(Level.INFO,(i + 1) + ". " + advertisement.getTitle() + " - " + advertisement.getDescription());
-	        LOGGER.log(Level.INFO,"   Approved: " + (advertisement.isApproved() ? "Yes" : "No"));
+	        LOGGER.log(Level.INFO,(i + 1) + ". {0}" + advertisement.getTitle() + " - {0}" + advertisement.getDescription());
+	        LOGGER.log(Level.INFO,"   Approved:{0} " + (advertisement.isApproved() ? "Yes" : "No"));
 	    }
 
 	    LOGGER.log(Level.INFO,"Enter the advertisement number to accept/reject (0 to cancel): ");
 	    int choice = scanner.nextInt();
-	    scanner.nextLine(); // Consume the newline character
+	    scanner.nextLine(); 
 
 	    if (choice >= 1 && choice <= housingAdvertisements.size()) {
 	        HousingAdvertisement selectedAdvertisement = housingAdvertisements.get(choice - 1);
@@ -108,10 +108,10 @@ public class AdminClass {
                 } else {
                 	    LOGGER.log(Level.INFO,"Reservations for the housing advertisement: " + advertisement.getTitle());
                     for (Reservation reservation : reservations) {
-                    	 LOGGER.log(Level.INFO,"Tenant: " + reservation.getTenantName());
-                    	 LOGGER.log(Level.INFO,"Contact Information: " + reservation.getContactInformation());
-                    	 LOGGER.log(Level.INFO,"Check-in Date: " + reservation.getCheckInDate());
-                    	 LOGGER.log(Level.INFO,"Check-out Date: " + reservation.getCheckOutDate());
+                    	 LOGGER.log(Level.INFO,"Tenant:{0} " , reservation.getTenantName()+" ");
+                    	 LOGGER.log(Level.INFO,"Contact Information:{0} " , reservation.getContactInformation()+" ");
+                    	 LOGGER.log(Level.INFO,"Check-in Date:{0} " , reservation.getCheckInDate()+" ");
+                    	 LOGGER.log(Level.INFO,"Check-out Date:{0} " , reservation.getCheckOutDate()+" ");
                     	 LOGGER.log(Level.INFO," ");
                     }
                 }
@@ -173,7 +173,7 @@ public class AdminClass {
                 LOGGER.log(Level.INFO,"Unit added to the existing housing successfully!");
                
             } else {
-                System.out.println("Housing advertisement not found. Adding a new housing instead.");
+            	LOGGER.log(Level.INFO,"Housing advertisement not found. Adding a new housing instead.");
                 Units newUnit = new Units(unitNumber, bedrooms, bathrooms, available,monthlyRait,photo,price);
                 addNewHousing().addUnit(newUnit);
             }
@@ -231,11 +231,11 @@ public class AdminClass {
         
         for (HousingAdvertisement advertisement : housingAdvertisements) {
             
-        	 LOGGER.log(Level.INFO,"Title: " + advertisement.getTitle());
-        	 LOGGER.log(Level.INFO,"Description: " + advertisement.getDescription());
-        	 LOGGER.log(Level.INFO,"Location: " + advertisement.getLocation());
-        	 LOGGER.log(Level.INFO,"Owner: " + advertisement.getOwner().getName());
-        	 LOGGER.log(Level.INFO,"Contact Information: " + advertisement.getOwner().getContactInformation());
+        	 LOGGER.log(Level.INFO,"Title:{0} " , advertisement.getTitle()+" ");
+        	 LOGGER.log(Level.INFO,"Description:{0} " , advertisement.getDescription()+" ");
+        	 LOGGER.log(Level.INFO,"Location:{0} " , advertisement.getLocation()+" ");
+        	 LOGGER.log(Level.INFO,"Owner:{0} " , advertisement.getOwner().getName()+" ");
+        	 LOGGER.log(Level.INFO,"Contact Information: {0}" , advertisement.getOwner().getContactInformation()+" ");
         	 LOGGER.log(Level.INFO,DASH);
            
         }
@@ -248,11 +248,11 @@ public class AdminClass {
     	
        for (HousingAdvertisement advertisement : housingAdvertisements) {
           
-    	   LOGGER.log(Level.INFO,"Title: " + advertisement.getTitle());
-    	   LOGGER.log(Level.INFO,"Description: " + advertisement.getDescription());
-    	   LOGGER.log(Level.INFO,"Location: " + advertisement.getLocation());
-    	   LOGGER.log(Level.INFO,"Owner: " + advertisement.getOwner().getName());
-    	   LOGGER.log(Level.INFO,"Contact Information: " + advertisement.getOwner().getContactInformation());
+    	   LOGGER.log(Level.INFO,"Title:{0} " , advertisement.getTitle()+" ");
+    	   LOGGER.log(Level.INFO,"Description:{0} " , advertisement.getDescription()+" ");
+    	   LOGGER.log(Level.INFO,"Location:{0} " , advertisement.getLocation()+" ");
+    	   LOGGER.log(Level.INFO,"Owner: {0}" , advertisement.getOwner().getName()+" ");
+    	   LOGGER.log(Level.INFO,"Contact Information:{0} " , advertisement.getOwner().getContactInformation()+" ");
     	   LOGGER.log(Level.INFO,DASH);
               
            }
@@ -281,9 +281,9 @@ public class AdminClass {
 
         if (selectedAdvertisement != null) {
         	 LOGGER.log(Level.INFO,"Housing Advertisement Details:");
-        	 LOGGER.log(Level.INFO,"Title: " + selectedAdvertisement.getTitle());
-        	 LOGGER.log(Level.INFO,"Description: " + selectedAdvertisement.getDescription());
-        	 LOGGER.log(Level.INFO,"Contact Information: " + selectedAdvertisement.getOwner().getContactInformation());
+        	 LOGGER.log(Level.INFO,"Title: " , selectedAdvertisement.getTitle()+" ");
+        	 LOGGER.log(Level.INFO,"Description: " , selectedAdvertisement.getDescription()+" ");
+        	 LOGGER.log(Level.INFO,"Contact Information: " , selectedAdvertisement.getOwner().getContactInformation()+" ");
 
         	 LOGGER.log(Level.INFO,"Select the field you want to modify:");
         	 LOGGER.log(Level.INFO,"1. Title");
@@ -336,11 +336,11 @@ public class AdminClass {
 
         for (HousingAdvertisement advertisement : housingAdvertisements) {
             if (advertisement.getOwner().getName().equalsIgnoreCase(ownerName)) {
-            	 LOGGER.log(Level.INFO,"Title: " + advertisement.getTitle());
-            	 LOGGER.log(Level.INFO,"Description: " + advertisement.getDescription());
-            	 LOGGER.log(Level.INFO,"Location: " + advertisement.getLocation());
-            	 LOGGER.log(Level.INFO,"Owner: " + advertisement.getOwner().getName());
-            	 LOGGER.log(Level.INFO,"Contact Information: " + advertisement.getOwner().getContactInformation());
+            	 LOGGER.log(Level.INFO,"Title: {0}" , advertisement.getTitle()+" ");
+            	 LOGGER.log(Level.INFO,"Description:{0} " , advertisement.getDescription()+" ");
+            	 LOGGER.log(Level.INFO,"Location:{0} " , advertisement.getLocation()+" ");
+            	 LOGGER.log(Level.INFO,"Owner: {0}" , advertisement.getOwner().getName()+" ");
+            	 LOGGER.log(Level.INFO,"Contact Information:{0} " , advertisement.getOwner().getContactInformation()+" ");
             	 LOGGER.log(Level.INFO,DASH);
                 found = true;
             }
@@ -362,5 +362,10 @@ public class AdminClass {
 	
     
 } 
+
+    
+
+	
+	
 
     

@@ -4,14 +4,15 @@ package najah.edu.acceptance;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
 public class Units {
 	 private static final Logger LOGGER = Logger.getLogger(Units.class.getName());
- public static Boolean 	availableflage;
- public static Boolean monthlyflage;
- public static String photounit;
+	 private   static boolean 	availableflage=false;
+	 private   static boolean monthlyflage=false;
+	 private   static  String photounit;
  
  
     public int getPrice() {
@@ -64,8 +65,8 @@ public static void setMonthlyflage(Boolean monthlyflage) {
 		this.inclusiveOfUtilities = inclusiveOfUtilities;
 	}
 
-	public void setReservations(ArrayList<Reservation> reservations) {
-		this.reservations = reservations;
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = (ArrayList<Reservation>) reservations;
 	}
 	public static Boolean getAvailableflage() {
 		return availableflage;
@@ -141,7 +142,7 @@ public static void setMonthlyflage(Boolean monthlyflage) {
         return inclusiveOfUtilities;
     }
 
-    public void setinclusiveOfUtilities(boolean inclusiveOfUtilities) {
+    public void SetinclusiveOfUtilities(boolean inclusiveOfUtilities) {
         this.inclusiveOfUtilities = inclusiveOfUtilities;
     }
 
@@ -167,9 +168,10 @@ public static void setMonthlyflage(Boolean monthlyflage) {
 	public void setMonthlyRent(boolean monthlyRent) {
 		this.monthlyRent = monthlyRent;
 	}
-	public static ArrayList<Units> unit=new ArrayList <Units>();
+	private   static boolean found = false;
+	  private static final List<Units> unit=new ArrayList <Units>();
     public void viewunit() {
-        boolean found = false;
+       
 
         for (Units Unitlist : unit ) {
            
@@ -193,7 +195,7 @@ public static void setMonthlyflage(Boolean monthlyflage) {
        
     }
     public void viewunitphoto() {
-        boolean found = false;
+       
 
         for (Units Unitlist : unit ) {
         	LOGGER.log(Level.INFO, "unitnumber:{0}",Unitlist.getUnitNumber()+" ");
@@ -321,3 +323,4 @@ public static void setMonthlyflage(Boolean monthlyflage) {
    
     
 }
+ 

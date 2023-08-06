@@ -1,26 +1,28 @@
 package najah.edu.acceptance;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 
 public class Main {
 	
+	 private   static boolean exitFlage=false ;
 	
-	public static Boolean Exit_flage=true;
 	
-	public static Boolean getExit_flage() {
-		return Exit_flage;
+	
+	 public static boolean isExitFlage() {
+		return exitFlage;
 	}
-	public static void setExit_flage(Boolean exit_flage) {
-		Exit_flage = exit_flage;
+	public static void setExitFlage(boolean exitFlage) {
+		Main.exitFlage = exitFlage;
 	}
-	public static AdminClass admin = new AdminClass();
-	 public static OwnerClass o1=new OwnerClass ("Alaa","059978789");
-	 public static OwnerClass o2=new OwnerClass ("momen","05998979");
-     public static Units u=new Units();
-	public static User loggedInUser;
-	public static ArrayList<User> users = new ArrayList<User>();
+	static AdminClass admin = new AdminClass();
+	 static OwnerClass o1=new OwnerClass ("Alaa","059978789");
+	  static OwnerClass o2=new OwnerClass ("momen","05998979");
+      static Units u=new Units();
+	   static User loggedInUser;
+	   private static final List<User> users = new ArrayList<User>();
 	
     public static void userlogin () {
     	ArrayList<User> users = new ArrayList<User>();

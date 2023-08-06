@@ -5,13 +5,13 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class furnitureClass {
-	 private static final Logger LOGGER = Logger.getLogger(furnitureClass.class.getName());
+public class FurnitureClass {
+	 private static final Logger LOGGER = Logger.getLogger(FurnitureClass.class.getName());
 	
 	    private String type;
 	    private String material;
 	    private double price;
-	   // public static boolean Furnitflage;
+	   
 	    private   static boolean furnitFlage =false;
 
 		
@@ -22,11 +22,11 @@ public class furnitureClass {
 
 
 		public static void setFurnitFlage(boolean furnitFlage) {
-			furnitureClass.furnitFlage = furnitFlage;
+			FurnitureClass.furnitFlage = furnitFlage;
 		}
 
 
-		public furnitureClass (String type, String material, double price) {
+		public FurnitureClass (String type, String material, double price) {
 	        this.type = type;
 	        this.material = material;
 	        this.price = price;
@@ -60,7 +60,7 @@ public class furnitureClass {
 	   
 	    public void displayInfo() {
 
-	        for (furnitureClass f : furnit ) {
+	        for (FurnitureClass f : furnit ) {
 	        	 LOGGER.log(Level.INFO,"Furniture Type:{0}",f.getType()+"");
 	        	 
 	        	
@@ -72,17 +72,17 @@ public class furnitureClass {
 	        	 LOGGER.log(Level.INFO,"-----------------------------------------");
 	    }
 	    }
-	    public static List<furnitureClass> furnit=new ArrayList<furnitureClass>();
+	    public static List<FurnitureClass> furnit=new ArrayList<FurnitureClass>();
 
 	    public static  void initfurniture () {
-	    	furnit.add(new furnitureClass("Table", "Wood", 199.99) );
-	    	furnit.add(new furnitureClass("chiar", "Wood", 200.99) );
+	    	furnit.add(new FurnitureClass("Table", "Wood", 199.99) );
+	    	furnit.add(new FurnitureClass("chiar", "Wood", 200.99) );
 	
 	    	furnitFlage=true;
 	    	
 	    }
 
-		public furnitureClass() {
+		public FurnitureClass() {
 			super();
 		}
  

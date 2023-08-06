@@ -120,12 +120,16 @@ public class LoginSteps {
 		 inti();
 		 inti1();
 		 inti2();
+
 		 boolean flag=false;
 		 boolean flag0=false;
-		 LOGGER.log(Level.INFO,"Enter Username : ");
+		 boolean flag1=false;
+
+		 LOGGER.log(Level.INFO,"Enter Username :");
 		input2 = new Scanner(System.in);
 		String username=input2.nextLine();
-		for(int i=0;i<userslogin.size()&&i<workerlogin.size();i++) {
+		
+		for(int i=0;i<userslogin.size()&&i<workerlogin.size() && i<ownerlogin.size();i++) {
 			 if(userslogin.get(i).username.equals(username)) {
 				 LOGGER.log(Level.INFO,ENTERPASS);
 				String pass=input2.nextLine();
@@ -135,7 +139,7 @@ public class LoginSteps {
 					return i;
 				}
 				else {
-					 LOGGER.log(Level.INFO,ERROR);
+					 LOGGER.log(Level.INFO,ENTERPASS );
 					String pas=input2.nextLine();
 					if(userslogin.get(i).password.equals(pas)) {
 						flag =true;
@@ -143,9 +147,9 @@ public class LoginSteps {
 	                    return i;}
 			 }
 			  flag0=true; }
-			 else {
-				 if(workerlogin.get(i).username.equals(username)) {
-					 LOGGER.log(Level.INFO,ENTERPASS);
+			 else  
+				 if(workerlogin.get(i).username.equals(username) ) {
+					 LOGGER.log(Level.INFO,ERROR );
 						String pass=input2.nextLine();
 						if(workerlogin.get(i).password.equals(pass)) {
 							flag = true;
@@ -153,19 +157,45 @@ public class LoginSteps {
 							return i;
 						}
 						else {
-							 LOGGER.log(Level.INFO,ERROR);
+							 LOGGER.log(Level.INFO, ERROR);
 							String pas=input2.nextLine();
 							if(workerlogin.get(i).password.equals(pas)) {
 								flag =true;
 								f0=true;
 			                    return i;}
 					 }
-					  flag0=true; }
-			 }
+					  flag1=true;
+					  }
+				 
+		
+			 
+				 else {
+					 if(ownerlogin.get(i).username.equals(username) ) {
+						 LOGGER.log(Level.INFO,ENTERPASS);
+							String pass=input2.nextLine();
+							if(ownerlogin.get(i).password.equals(pass)) {
+								flag = true;
+								f1=true;
+								return i;
+							}
+							else {
+								 LOGGER.log(Level.INFO, ERROR);
+								String pas=input2.nextLine();
+								if(ownerlogin.get(i).password.equals(pas)) {
+									flag =true;
+									f0=true;
+				                    return i;}
+						 }
+						  flag0=true; }
+				 
+				 }
+			
+				 
 			 }
 			 
+			 
 		if(!flag0) {
-			for(int i=0;i<userslogin.size()&&i<workerlogin.size();i++) {
+			for(int i=0;i<userslogin.size()&&i<workerlogin.size() && i<ownerlogin.size();i++) {
 				 if(userslogin.get(i).username.equals(username)) {
 					 LOGGER.log(Level.INFO,ENTERPASS);
 					String pass=input2.nextLine();
@@ -175,7 +205,7 @@ public class LoginSteps {
 						return i;
 					}
 					else {
-						 LOGGER.log(Level.INFO,ERROR);
+						 LOGGER.log(Level.INFO, ERROR);
 						String pas=input2.nextLine();
 						if(userslogin.get(i).password.equals(pas)) {
 							flag =true;
@@ -201,6 +231,27 @@ public class LoginSteps {
 				                    return i;}
 						 }
 						  flag0=true; }
+					 
+					 
+					 else {
+						 if(ownerlogin.get(i).username.equals(username)) {
+							 LOGGER.log(Level.INFO,ENTERPASS);
+								String pass=input2.nextLine();
+								if(ownerlogin.get(i).password.equals(pass)) {
+									flag = true;
+									f1=true;
+									return i;
+								}
+								else {
+									 LOGGER.log(Level.INFO,ERROR);
+									String pas=input2.nextLine();
+									if(ownerlogin.get(i).password.equals(pas)) {
+										flag =true;
+										f1=true;
+					                    return i;}
+							 }
+							  flag0=true; }
+					 }
 				 }
 				 }
 		}
@@ -216,6 +267,7 @@ public class LoginSteps {
 			}
 	return -1;
 		}
+		  
      
 	
 		
@@ -311,4 +363,5 @@ public class LoginSteps {
 	 
 	
 }
+
 

@@ -168,10 +168,10 @@ public static void setMonthlyflage(Boolean monthlyflage) {
 	public void setMonthlyRent(boolean monthlyRent) {
 		this.monthlyRent = monthlyRent;
 	}
-	private   static boolean found = false;
-	  private static final List<Units> unit=new ArrayList <Units>();
+	public static ArrayList<Units> unit=new ArrayList <Units>();
+	 private   static boolean found = false;
     public void viewunit() {
-       
+        
 
         for (Units Unitlist : unit ) {
            
@@ -195,7 +195,7 @@ public static void setMonthlyflage(Boolean monthlyflage) {
        
     }
     public void viewunitphoto() {
-       
+    	
 
         for (Units Unitlist : unit ) {
         	LOGGER.log(Level.INFO, "unitnumber:{0}",Unitlist.getUnitNumber()+" ");
@@ -323,4 +323,3 @@ public static void setMonthlyflage(Boolean monthlyflage) {
    
     
 }
- 

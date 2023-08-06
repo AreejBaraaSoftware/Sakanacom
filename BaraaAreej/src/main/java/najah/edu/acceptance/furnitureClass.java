@@ -72,7 +72,7 @@ public class FurnitureClass {
 	        	 LOGGER.log(Level.INFO,"-----------------------------------------");
 	    }
 	    }
-	    public static List<FurnitureClass> furnit=new ArrayList<FurnitureClass>();
+	      private static final List<FurnitureClass> furnit=new ArrayList<FurnitureClass>();
 
 	    public static  void initfurniture () {
 	    	furnit.add(new FurnitureClass("Table", "Wood", 199.99) );

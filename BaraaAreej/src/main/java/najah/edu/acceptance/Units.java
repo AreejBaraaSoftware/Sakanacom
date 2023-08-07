@@ -12,7 +12,7 @@ public class Units {
 	 private static final Logger LOGGER = Logger.getLogger(Units.class.getName());
 	 private   static boolean 	availableflage=false;
 	 private   static boolean monthlyflage=false;
-	   static  String photounit;
+	   private static  String photounit;
  
  
     public int getPrice() {

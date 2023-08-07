@@ -11,6 +11,7 @@ public class Main {
 	
 	
 	
+	 
 	 public static boolean isExitFlage() {
 		return exitFlage;
 	}
@@ -22,16 +23,16 @@ public class Main {
 	  static OwnerClass o2=new OwnerClass ("momen","05998979");
       static Units u=new Units();
 	   static User loggedInUser;
+	   ArrayList<Reservation> Reservelist;
 	   private static final List<User> users = new ArrayList<User>();
 	
-    public static void userlogin () 
-	{
+    public static void userlogin () {
     	ArrayList<User> users = new ArrayList<User>();
     	users.add(new User("Baraa", "T***", "tenant")); 
 	    users.add(new User("Areej", "A***", "admin")); 
 	    users.add(new User("Alaa", "O***", "owner"));   	
     }
-   static   Reservation R1=new Reservation();
+   static   Reservation Rsevev=new Reservation();
     public static void  addTestData() {
     	HousingAdvertisement ad1 = new HousingAdvertisement("Title 1", "Description 1","Nablus",o1);
         HousingAdvertisement ad2 = new HousingAdvertisement("Title 2", "Description 2","Ramallah",o2);
@@ -45,8 +46,8 @@ public class Main {
     Reservation reservation2 = new Reservation("Jane Smith", "jane.smith@example.com", "2023-07-05", "2023-07-12");
     Reservation.setApproved(true);
     Reservation .setApproved(true);
-   R1.Reservelist.add(reservation1);
-   R1.Reservelist.add(reservation2);
+    Rsevev.Reservelist.add(reservation1);
+    Rsevev.Reservelist.add(reservation2);
     }
     public static void unitlist() {
     	Units unit1 = new Units("101", 2, 1, true,false,"photo1.txt",4000);

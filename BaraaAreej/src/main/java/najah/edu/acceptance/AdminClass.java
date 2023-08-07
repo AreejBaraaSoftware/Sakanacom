@@ -33,12 +33,12 @@ public class AdminClass {
 	}
 
 	
-	public static boolean HOUSEADED;
+	private   static boolean add;
 	public static boolean isHOUSEADED() {
-		return HOUSEADED;
+		return add;
 	}
 	public static void setHOUSEADED(boolean hOUSEADED) {
-		HOUSEADED = hOUSEADED;
+		add = hOUSEADED;
 	}
 	
 	public static Boolean getState() {
@@ -229,7 +229,7 @@ public  HousingAdvertisement addNewHousing() {
     newAdvertisement.setApproved(true);
     housingAdvertisements.add(newAdvertisement);
     LOGGER.log(Level.INFO,"New housing added successfully!");
-    HOUSEADED=true;
+    add=true;
     return newAdvertisement;
 }
    

@@ -12,7 +12,7 @@ public class Units {
 	 private static final Logger LOGGER = Logger.getLogger(Units.class.getName());
 	 private   static boolean 	availableflage=false;
 	 private   static boolean monthlyflage=false;
-	   private static  String photounit;
+	 private   static  String photounit;
  
  
     public int getPrice() {
@@ -158,9 +158,7 @@ public static void setMonthlyflage(Boolean monthlyflage) {
     static List<Reservation> getReservations() {
         return reservations;
     }
-    public static void unitavailabele() {
-   	 
-    }
+   
     
     public boolean isMonthlyRent() {
 		return monthlyRent;
@@ -323,5 +321,4 @@ public static void setMonthlyflage(Boolean monthlyflage) {
    
     
 }
-	
 

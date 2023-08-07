@@ -273,8 +273,8 @@ public class AdminClass {
      
     }
    
-    public static OwnerClass o1=new OwnerClass ("Alaa","059978789");
-	 public static OwnerClass o2=new OwnerClass ("momen","05998979");
+     static OwnerClass o1=new OwnerClass ("Alaa","059978789");
+	 static OwnerClass o2=new OwnerClass ("momen","05998979");
    
 	 public void modifyHousingData() {
     	
@@ -294,9 +294,9 @@ public class AdminClass {
 
         if (selectedAdvertisement != null) {
         	 LOGGER.log(Level.INFO,"Housing Advertisement Details:");
-        	 LOGGER.log(Level.INFO,"Title: " , selectedAdvertisement.getTitle()+" ");
-        	 LOGGER.log(Level.INFO,"Description: " , selectedAdvertisement.getDescription()+" ");
-        	 LOGGER.log(Level.INFO,"Contact Information: " , selectedAdvertisement.getOwner().getContactInformation()+" ");
+        	 LOGGER.log(Level.INFO,"Title: {0}" , selectedAdvertisement.getTitle()+" ");
+        	 LOGGER.log(Level.INFO,"Description:{0} " , selectedAdvertisement.getDescription()+" ");
+        	 LOGGER.log(Level.INFO,"Contact Information: {0}" , selectedAdvertisement.getOwner().getContactInformation()+" ");
 
         	 LOGGER.log(Level.INFO,"Select the field you want to modify:");
         	 LOGGER.log(Level.INFO,"1. Title");
@@ -361,7 +361,7 @@ public class AdminClass {
         }
 
         if (!found) {
-        	 LOGGER.log(Level.INFO,"No housing advertisements found for owner: " + ownerName);
+        	 LOGGER.log(Level.INFO,"No housing advertisements found for owner: {0}" + ownerName);
         }
     }
 	public static Boolean getShowdetail() {

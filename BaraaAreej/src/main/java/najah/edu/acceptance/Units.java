@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Scanner;
 
 
-
 public class Units {
 	 private static final Logger LOGGER = Logger.getLogger(Units.class.getName());
 	 private   static boolean 	availableflage=false;
@@ -244,41 +243,7 @@ public static void setMonthlyflage(Boolean monthlyflage) {
    }
    
    
-   public static Boolean flagepicture;
-	
-	public static Boolean getFlagepicture() {
-		return flagepicture;
-	}
-
-	public static void setFlagepicture(Boolean flagepicture) {
-		OwnerClass.flagepicture = flagepicture;
-	}
-   
-   
-	
-	
-   public static void addphoto() {
-	   Units unit1 = new Units("101","");
-       Units unit2 = new Units("102","");
-    
-       unit.add(unit1);
-       unit.add(unit2);
-	  
-		   Scanner scanner = new Scanner(System.in);
-		   LOGGER.log(Level.INFO,"Enter the unit number: ");
-	        String unitNumber = scanner.nextLine();
-	        for ( int i=0;i<unit.size();i++) {
-		   if(unit.get(i).getUnitNumber().equals(unitNumber)) {
-			   LOGGER.log(Level.INFO,"Enter the photo: ");
-		        String photo = scanner.nextLine();
-		        unit.get(i).setPhotounit(photo);
-		        flagepicture=true;
-			   
-		   }
-	        }
-	   
-      
-   }
+  
 	
 	
 	
@@ -322,4 +287,3 @@ public static void setMonthlyflage(Boolean monthlyflage) {
    
     
 }
-

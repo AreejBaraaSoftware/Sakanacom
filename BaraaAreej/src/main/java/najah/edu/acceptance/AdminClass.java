@@ -1,6 +1,7 @@
 package najah.edu.acceptance;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 import java.util.logging.Level;
@@ -8,8 +9,8 @@ import java.util.logging.Level;
 public class AdminClass {
 	private static final Logger LOGGER = Logger.getLogger(AdminClass.class.getName());
 	 static final String DASH = " -------------------------------------------------";
-	
-	 public static Boolean showdetail = false;
+	//public static Boolean showdetail;
+	 private   static boolean showdetail = false;
 	 
 	 static Boolean addflage=false;
 	public static Boolean getAddflage() {
@@ -19,8 +20,8 @@ public class AdminClass {
 		AdminClass.addflage = addflage;
 	}
 
-	public static Boolean state=false;
-	public static Boolean modifedflage=false;
+	 private   static boolean state=false;
+	 private   static boolean modifedflage=false;
 	public static Boolean getModifedflage() {
 		return modifedflage;
 	}
@@ -28,7 +29,7 @@ public class AdminClass {
 		AdminClass.modifedflage = modifedflage;
 	}
 
-	public static boolean HOUSEADED=false ;
+	 private   static boolean HOUSEADED=false ;
 	public static boolean isHOUSEADED() {
 		return HOUSEADED;
 	}
@@ -43,18 +44,19 @@ public class AdminClass {
 	public static void setState(Boolean state) {
 		AdminClass.state = state;
 	}
-	
-	public static ArrayList<HousingAdvertisement> housingAdvertisements;
+	 static List<HousingAdvertisement> housingAdvertisements;
+	//public static ArrayList<HousingAdvertisement> housingAdvertisements;
     public AdminClass() {
-        housingAdvertisements = new ArrayList<HousingAdvertisement>();   
+       housingAdvertisements = new ArrayList<HousingAdvertisement>(); 
+    	//housingAdvertisements = new List<HousingAdvertisement>();
     }
     
     	
     public static  void viewmanagmenthouse() {
     	 for (int i = 0; i < housingAdvertisements.size(); i++) {
  	        HousingAdvertisement advertisement = housingAdvertisements.get(i);
- 	       LOGGER.log(Level.INFO,(i + 1) + ".{0} " + advertisement.getTitle() + " - {0}" + advertisement.getDescription());
- 	      LOGGER.log(Level.INFO,"   Approved: {0}" + (advertisement.isApproved() ? "Yes" : "No"));
+ 	       LOGGER.log(Level.INFO,(i + 1) + ". " + advertisement.getTitle() + " - " + advertisement.getDescription());
+ 	      LOGGER.log(Level.INFO,"   Approved: " + (advertisement.isApproved() ? "Yes" : "No"));
  	    }
 
     }
@@ -64,8 +66,8 @@ public class AdminClass {
     	 LOGGER.log(Level.INFO,"Housing Advertisements:");
 	    for (int i = 0; i < housingAdvertisements.size(); i++) {
 	        HousingAdvertisement advertisement = housingAdvertisements.get(i);
-	        LOGGER.log(Level.INFO,(i + 1) + ". {0}" + advertisement.getTitle() + " - {0}" + advertisement.getDescription());
-	        LOGGER.log(Level.INFO,"   Approved:{0} " + (advertisement.isApproved() ? "Yes" : "No"));
+	        LOGGER.log(Level.INFO,(i + 1) + ". " + advertisement.getTitle() + " -  " + advertisement.getDescription());
+	        LOGGER.log(Level.INFO,"   Approved: " + (advertisement.isApproved() ? "Yes" : "No"));
 	    }
 
 	    LOGGER.log(Level.INFO,"Enter the advertisement number to accept/reject (0 to cancel): ");
@@ -106,7 +108,7 @@ public class AdminClass {
                 if (reservations.isEmpty()) {
                 	 LOGGER.log(Level.INFO,"No reservations found for the housing advertisement.");
                 } else {
-                	    LOGGER.log(Level.INFO,"Reservations for the housing advertisement: " + advertisement.getTitle());
+                	    LOGGER.log(Level.INFO,"Reservations for the housing advertisement:{0} " , advertisement.getTitle()+" ");
                     for (Reservation reservation : reservations) {
                     	 LOGGER.log(Level.INFO,"Tenant:{0} " , reservation.getTenantName()+" ");
                     	 LOGGER.log(Level.INFO,"Contact Information:{0} " , reservation.getContactInformation()+" ");
@@ -118,7 +120,7 @@ public class AdminClass {
             }
         }
     }
-	public static ArrayList<Units> unit=new ArrayList <Units>();
+    private static List<Units> unit=new ArrayList <Units>();
 
     private int  price ;
     public void addHousingUnit() {
@@ -364,3 +366,8 @@ public class AdminClass {
 } 
 
     
+
+        
+       
+      
+  

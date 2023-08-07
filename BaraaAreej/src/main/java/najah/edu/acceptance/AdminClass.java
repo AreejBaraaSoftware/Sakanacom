@@ -9,7 +9,7 @@ import java.util.logging.Level;
 public class AdminClass {
 	private static final Logger LOGGER = Logger.getLogger(AdminClass.class.getName());
 	 static final String DASH = " -------------------------------------------------";
-	//public static Boolean showdetail;
+
 	 private   static boolean showdetail = false;
 	 
 	 static Boolean addflage=false;
@@ -29,12 +29,12 @@ public class AdminClass {
 		AdminClass.modifedflage = modifedflage;
 	}
 
-	 private   static boolean HOUSEADED=false ;
+	 private   static boolean HouseAded=false ;
 	public static boolean isHOUSEADED() {
-		return HOUSEADED;
+		return HouseAded;
 	}
 	public static void setHOUSEADED(boolean hOUSEADED) {
-		HOUSEADED = hOUSEADED;
+		HouseAded = hOUSEADED;
 		
 	}
 	
@@ -45,18 +45,23 @@ public class AdminClass {
 		AdminClass.state = state;
 	}
 	 static List<HousingAdvertisement> housingAdvertisements;
-	//public static ArrayList<HousingAdvertisement> housingAdvertisements;
+
     public AdminClass() {
        housingAdvertisements = new ArrayList<HousingAdvertisement>(); 
-    	//housingAdvertisements = new List<HousingAdvertisement>();
+    	
     }
     
     	
     public static  void viewmanagmenthouse() {
     	 for (int i = 0; i < housingAdvertisements.size(); i++) {
  	        HousingAdvertisement advertisement = housingAdvertisements.get(i);
- 	       LOGGER.log(Level.INFO,(i + 1) + ". " + advertisement.getTitle() + " - " + advertisement.getDescription());
- 	      LOGGER.log(Level.INFO,"   Approved: " + (advertisement.isApproved() ? "Yes" : "No"));
+ 	       LOGGER.log(Level.INFO,"  ", (i + 1));
+	        LOGGER.log(Level.INFO, ". ");
+	        LOGGER.log(Level.INFO, advertisement.getTitle());
+	        LOGGER.log(Level.INFO," -  " );
+	        LOGGER.log(Level.INFO,  advertisement.getDescription());
+	        LOGGER.log(Level.INFO,"   Approved: " );
+	        LOGGER.log(Level.INFO,(advertisement.isApproved() ? "Yes" : "No"));
  	    }
 
     }
@@ -66,8 +71,13 @@ public class AdminClass {
     	 LOGGER.log(Level.INFO,"Housing Advertisements:");
 	    for (int i = 0; i < housingAdvertisements.size(); i++) {
 	        HousingAdvertisement advertisement = housingAdvertisements.get(i);
-	        LOGGER.log(Level.INFO,(i + 1) + ". " + advertisement.getTitle() + " -  " + advertisement.getDescription());
-	        LOGGER.log(Level.INFO,"   Approved: " + (advertisement.isApproved() ? "Yes" : "No"));
+	        LOGGER.log(Level.INFO,"  ", (i + 1));
+	        LOGGER.log(Level.INFO, ". ");
+	        LOGGER.log(Level.INFO, advertisement.getTitle());
+	        LOGGER.log(Level.INFO," -  " );
+	        LOGGER.log(Level.INFO,  advertisement.getDescription());
+	        LOGGER.log(Level.INFO,"   Approved: " );
+	        LOGGER.log(Level.INFO,(advertisement.isApproved() ? "Yes" : "No"));
 	    }
 
 	    LOGGER.log(Level.INFO,"Enter the advertisement number to accept/reject (0 to cancel): ");
@@ -110,10 +120,14 @@ public class AdminClass {
                 } else {
                 	    LOGGER.log(Level.INFO,"Reservations for the housing advertisement:{0} " , advertisement.getTitle()+" ");
                     for (Reservation reservation : reservations) {
-                    	 LOGGER.log(Level.INFO,"Tenant:{0} " , reservation.getTenantName()+" ");
-                    	 LOGGER.log(Level.INFO,"Contact Information:{0} " , reservation.getContactInformation()+" ");
-                    	 LOGGER.log(Level.INFO,"Check-in Date:{0} " , reservation.getCheckInDate()+" ");
-                    	 LOGGER.log(Level.INFO,"Check-out Date:{0} " , reservation.getCheckOutDate()+" ");
+                    	 LOGGER.log(Level.INFO,"Tenant:" );
+                    	 LOGGER.log(Level.INFO,reservation.getTenantName()+ " ");
+                    	 LOGGER.log(Level.INFO,"Contact Information:");
+                    	 LOGGER.log(Level.INFO , reservation.getContactInformation()+" ");
+                    	 LOGGER.log(Level.INFO,"Check-in Date:");
+                    	 LOGGER.log(Level.INFO , reservation.getCheckInDate()+" ");
+                    	 LOGGER.log(Level.INFO,"Check-out Date:" );
+                    	 LOGGER.log(Level.INFO,reservation.getCheckOutDate()+" ");
                     	 LOGGER.log(Level.INFO," ");
                     }
                 }
@@ -215,7 +229,7 @@ public class AdminClass {
         newAdvertisement.setApproved(true);
         housingAdvertisements.add(newAdvertisement);
         LOGGER.log(Level.INFO,"New housing added successfully!");
-        HOUSEADED=true;
+        HouseAded=true;
         return newAdvertisement;
     }
    
@@ -367,7 +381,6 @@ public class AdminClass {
 
     
 
-        
-       
-      
-  
+    
+    	
+   

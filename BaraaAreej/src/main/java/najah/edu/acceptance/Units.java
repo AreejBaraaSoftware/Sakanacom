@@ -12,7 +12,7 @@ public class Units {
 	 private static final Logger LOGGER = Logger.getLogger(Units.class.getName());
 	 private   static boolean 	availableflage=false;
 	 private   static boolean monthlyflage=false;
-	 private   static  String photounit;
+	   static  String photounit;
  
  
     public int getPrice() {
@@ -77,7 +77,7 @@ public static void setMonthlyflage(Boolean monthlyflage) {
 	private boolean hasBalcony;
     private boolean monthlyRent;
     private boolean inclusiveOfUtilities;
-    private ArrayList<Reservation> reservations;
+    private static ArrayList<Reservation> reservations;
 
     
     public Units( String unitNumber,String photounit) {
@@ -142,7 +142,7 @@ public static void setMonthlyflage(Boolean monthlyflage) {
         return inclusiveOfUtilities;
     }
 
-    public void SetinclusiveOfUtilities(boolean inclusiveOfUtilities) {
+    public void setinclusiveofUtilities(boolean inclusiveOfUtilities) {
         this.inclusiveOfUtilities = inclusiveOfUtilities;
     }
 
@@ -155,7 +155,7 @@ public static void setMonthlyflage(Boolean monthlyflage) {
         reservations.remove(reservation);
     }
 
-    public ArrayList<Reservation> getReservations() {
+    static List<Reservation> getReservations() {
         return reservations;
     }
     public static void unitavailabele() {
@@ -323,3 +323,5 @@ public static void setMonthlyflage(Boolean monthlyflage) {
    
     
 }
+	
+

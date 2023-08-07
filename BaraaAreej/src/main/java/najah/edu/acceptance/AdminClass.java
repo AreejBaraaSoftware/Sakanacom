@@ -12,7 +12,7 @@ public class AdminClass {
 
 	 private   static boolean showdetail = false;
 	 
-	 static Boolean addflage=false;
+	 private static boolean addflage=false;
 	public static Boolean getAddflage() {
 		return addflage;
 	}
@@ -30,12 +30,12 @@ public class AdminClass {
 	}
 
 	
-	private static boolean HouseAded=false ;
+	private static boolean add_hous=false ;
 	public static boolean isHOUSEADED() {
-		return HouseAded;
+		return add_hous;
 	}
 	public static void setHOUSEADED(boolean hOUSEADED) {
-		HouseAded = hOUSEADED;
+		add_hous = hOUSEADED;
 		
 	}
 	
@@ -72,7 +72,7 @@ public class AdminClass {
     	 LOGGER.log(Level.INFO,"Housing Advertisements:");
 	    for (int i = 0; i < housingAdvertisements.size(); i++) {
 	        HousingAdvertisement advertisement = housingAdvertisements.get(i);
-	        LOGGER.log(Level.INFO,"  ", (i + 1));
+	        LOGGER.log(Level.INFO," {0} " ,(i + 1));
 	        LOGGER.log(Level.INFO, ". ");
 	        LOGGER.log(Level.INFO, advertisement.getTitle());
 	        LOGGER.log(Level.INFO," -  " );
@@ -226,7 +226,7 @@ public class AdminClass {
         newAdvertisement.setApproved(true);
         housingAdvertisements.add(newAdvertisement);
         LOGGER.log(Level.INFO,"New housing added successfully!");
-        HouseAded=true;
+        add_hous=true;
         return newAdvertisement;
     }
    
@@ -377,10 +377,3 @@ public class AdminClass {
 } 
 
     
-
-	
-
-
-    
-    	
-   

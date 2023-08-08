@@ -3,7 +3,7 @@ package najah.edu.acceptance;
 import java.util.ArrayList;
 import java.util.List;
 
-class TenantClass {
+public class TenantClass {
 	
 	 private static final List<TenantClass> Tenant= new ArrayList<TenantClass>();
 	

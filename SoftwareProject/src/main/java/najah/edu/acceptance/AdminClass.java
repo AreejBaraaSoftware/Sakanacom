@@ -92,17 +92,11 @@ public class AdminClass {
 	        	state=true;
 	            selectedAdvertisement.setApproved(false);
 	            LOGGER.log(Level.INFO,"Advertisement rejected.");
-	        } else {
-	        	 LOGGER.log(Level.INFO,"Invalid decision. Returning to the admin dashboard.");
-	        }
-	    } else if (choice == 0) {
-	    	 LOGGER.log(Level.INFO,"Returning to the admin dashboard.");
-	    } else {
-	    	 LOGGER.log(Level.INFO,"Invalid advertisement number. Returning to the admin dashboard.");
-	    }
+	       
     }
     
-   
+	    }
+    }
     private static ArrayList<Units> unit=new ArrayList <Units>();
 
     private int  price ;

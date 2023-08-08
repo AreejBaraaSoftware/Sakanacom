@@ -5,7 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+
 
 
 public class Units {
@@ -152,7 +152,7 @@ public class Units {
    
    public static void availableornot() {
 	   for (Units Unitlist : unit ) {
-		   if(Unitlist.isAvailable()==true) {
+		   if(Unitlist.isAvailable()) {
 			   LOGGER.log(Level.INFO,Unitlist.getUnitNumber());
 			   LOGGER.log(Level.INFO," yes available");
 			   availableflage=true;
@@ -167,7 +167,7 @@ public class Units {
     
    public static void informationaboutmonthlyrent() {
 	   for (Units Unitlist : unit ) {
-		   if(Unitlist.isMonthlyRent()==true) {
+		   if(Unitlist.isMonthlyRent()) {
 			   LOGGER.log(Level.INFO,Unitlist.getUnitNumber());
 			   LOGGER.log(Level.INFO,"yes inclusive of electricity and water  ");
 			  monthlyflage=true;
